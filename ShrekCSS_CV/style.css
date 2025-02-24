@@ -1,0 +1,45 @@
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+.header{
+    background-color: rgba(2, 133, 2, 0.723);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-picture{
+    display: block;
+    margin: 0 auto;
+    border: 3px solid white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    display: block;
+    
+}
+
+
+h2{
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    background-color: tomato;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(239, 223, 4);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-style: italic;
+    font-size: large;
+    align-content: center;
+}
