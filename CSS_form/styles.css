@@ -102,7 +102,12 @@ input {
 
 #messageInput{
     border: 1px solid var(--red);
-    width: 26.73em;
+    
+}
+
+textarea{
+    outline: none;
+    width: 32.98em;
     height: 5em;
 }
 
