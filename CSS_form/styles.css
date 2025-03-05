@@ -84,7 +84,7 @@
     display: grid;
     width: 100%;
 }
-
+/* input specs for inputgroup1 and 2 */
 input {
     width: 11.8em; 
     height: 1.2em; 
@@ -93,7 +93,7 @@ input {
     font-size: 16px;
     outline: none;
 }
-
+/* message input area */
 .message{
     display: flex;
     flex-direction: column;
@@ -110,7 +110,7 @@ textarea{
     width: 32.98em;
     height: 5em;
 }
-
+/* big red submit button */
 .submitButton{
     color: white;
     background-color: var(--red);
