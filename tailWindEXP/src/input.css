@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer components {
+    .section-header {
+      @apply mt-4 rounded-md bg-[#ff5722] p-2 text-2xl font-semibold text-white;
+    }
+    .sub-header{
+        @apply text-xl pb-2 font-medium;
+    }
+}

@@ -1,49 +1,45 @@
-
 body {
-    font-family: 'Arial', sans-serif;
-  }
-
-.title{
-    font-style: italic;
+  font-family: "Arial", sans-serif;
 }
 
-.header{
-    background-color: #4caf50;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    color: white;
-    text-align: center;
-    padding: 20px;
+.title {
+  font-style: italic;
 }
 
-.profile-picture{
-    display: block;
-    margin: 0 auto;
-    border: 3px solid white;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    display: block;
-    
+.header {
+  background-color: #4caf50;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-
-h2{
-    padding: 10px;
-    color: white;
-    border-radius: 5px;
-    background-color: #ff5722;
+.profile-picture {
+  display: block;
+  margin: 0 auto;
+  border: 3px solid white;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
 }
 
-.footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #ffeb3b;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    font-style: italic;
-    font-size: large;
-    align-content: center;
+h2 {
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  background-color: #ff5722;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffeb3b;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-style: italic;
+  font-size: large;
+  align-content: center;
 }
