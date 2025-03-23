@@ -5,7 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
   </head>
-  <body>
-    <h1 class="text-4xl font-bold underline">Hello world!</h1>
+  <body class="flex flex-wrap justify-center bg-gray-200">
+    <!-- limit and increment control -->
+    <div
+      class="flex flex-col w-xs h-xs m-10 shadow-2xl shadow-black rounded-2xl bg-yellow-100"
+    >
+      <div class="flex justify-center m-4 border-1 rounded-2xl bg-gray-100">
+        <p>
+          Current limit: <span id="currentLimit">0</span>, increment:
+          <span id="currentIncrement">0</span>
+        </p>
+      </div>
+      <!-- limit dial -->
+      <div class="m-4">
+        <p class="flex justify-center my-2">Enter custom limit number</p>
+        <input
+          value="0"
+          id="limitInput"
+          type="number"
+          class="border-1 border-black mx-12 rounded-2xl bg-gray-100 px-2"
+        /><br /><button
+          id="limitButton"
+          class="m-2 mx-12 border-1 px-4 rounded-2xl bg-amber-200 hover:bg-amber-400"
+        >
+          Submit
+        </button>
+      </div>
+      <!-- increment dial dial -->
+      <div class="m-4">
+        <p class="flex justify-center my-2">Enter custom increment number</p>
+        <input
+          value="0"
+          id="incrementInput"
+          type="number"
+          class="border-1 border-black mx-12 rounded-2xl bg-gray-100 px-2"
+        />
+        <br /><button
+          id="incrementButton"
+          class="m-2 mx-12 border-1 px-4 rounded-2xl bg-amber-200 hover:bg-amber-400"
+        >
+          Submit
+        </button>
+      </div>
+      <!-- Reset button -->
+      <div class="flex m-4 justify-center">
+        <button
+          id="resetButton"
+          class="border-2 px-12 py-2 bg-red-500 text-white font-bold text-4xl rounded-2xl hover:bg-red-800"
+        >
+          RESET
+        </button>
+      </div>
+    </div>
+    <!-- main card -->
+    <div class="w-xl m-10 shadow-2xl shadow-black rounded-2xl bg-yellow-100">
+      <!-- Number divide -->
+      <div class="flex justify-center align-middle m-6">
+        <p id="numDisplay" class="h-[6rem] m-10 p-10 text-9xl font-bold">0</p>
+      </div>
+      <!-- Button divide -->
+      <div class="flex justify-center align-middle">
+        <button
+          onclick="incrementCounter()"
+          id="plusButton"
+          class="font-extrabold text-6xl m-4 w-[6rem] h-[6rem] bg-green-600 text-white hover:bg-green-800 rounded-2xl"
+        >
+          +
+        </button>
+        <button
+          onclick="decrementCounter()"
+          id="minusBtton"
+          class="font-extrabold text-6xl m-4 w-[6rem] h-[6rem] bg-red-600 text-white hover:bg-red-800 rounded-2xl"
+        >
+          -
+        </button>
+      </div>
+      <!-- BOOOOOM box divide -->
+      <div>
+        <p
+          id="boomBox"
+          class="hidden text-9xl justify-center bg-purple-500 text-white p-4 rounded-b-2xl"
+        >
+          !bOoMm!
+        </p>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>
