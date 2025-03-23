@@ -9,16 +9,18 @@ const incrementInput = document.getElementById("incrementInput");
 
 // Local storage reload
 const onPageLoad = () => {
-  if (limit != 35 || count != 5) {
-    const savedLimit = localStorage.getItem("savedLimit");
-    const savedIncrement = localStorage.getItem("savedIncrement");
-
+  const savedLimit = localStorage.getItem("savedLimit");
+  const savedIncrement = localStorage.getItem("savedIncrement");
+  if (savedLimit !== null) {
     limit = parseInt(savedLimit);
-    increment = parseInt(savedIncrement);
-  } else {
-    limit = 35;
-    increment = 5;
   }
+  if (savedIncrement !== null) {
+    increment = parseInt(savedIncrement);
+  }
+  // limit = 35;
+  // increment = 5;
+  document.getElementById("currentLimit").innerHTML = limit;
+  document.getElementById("currentIncrement").innerHTML = increment;
 };
 
 onPageLoad();
@@ -34,6 +36,8 @@ document.getElementById("limitButton").addEventListener("click", () => {
   console.log(newLimit);
   document.getElementById("currentLimit").innerHTML = limit;
   limitInput.value = "0";
+  counterElement.innerHTML = 0;
+  count = 0;
 
   localStorage.setItem("savedLimit", limit);
 });
@@ -45,6 +49,8 @@ document.getElementById("incrementButton").addEventListener("click", () => {
   console.log(newIncrement);
   document.getElementById("currentIncrement").innerHTML = increment;
   incrementInput.value = "0";
+  counterElement.innerHTML = 0;
+  count = 0;
 
   localStorage.setItem("savedIncrement", increment);
 });
