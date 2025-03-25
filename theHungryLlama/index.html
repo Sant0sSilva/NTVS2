@@ -1,11 +1,288 @@
 <!DOCTYPE html>
-<html>
+<html class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body>
-    <h1 class="text-4xl font-bold underline">Hello world!</h1>
+  <body class="bg-gradient-to-b from-amber-600 to-amber-100">
+    <!-- Nav Bar -->
+    <nav
+      class="p-5 bg-amber-600 shadow md:flex md:items-center md:justify-between"
+    >
+      <div class="flex justify-between items-center">
+        <!-- Hungry Llama logo -->
+        <span>
+          <img
+            class="h-12 w-12 m-0 mx-4 rounded-4xl opacity-85"
+            src="/images/hungryLlama.png"
+            alt=""
+          />
+        </span>
+        <!-- Nav bar title -->
+        <span
+          class="text-3xl font-light text-amber-100 font-[playfair] cursor-pointer italic"
+        >
+          The Hungry Llama
+        </span>
+        <!-- Hamberuger Menu Icon -->
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+      <!-- Nav bar list -->
+      <ul
+        id="navMenu"
+        class="text-amber-950 md:flex md:items-center z-[1] md:z-auto md:static absolute bg-amber-600 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+      >
+        <li class="mx-4 my-6 md:my-0">
+          <a href="index.html" class="text-xl hover:font-bold duration-500"
+            >Home</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="menu.html" class="text-xl hover:font-bold duration-500"
+            >Menu</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#aboutUs" class="text-xl hover:font-bold duration-500"
+            >About Us</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#contactUs" class="text-xl hover:font-bold duration-500"
+            >Contact</a
+          >
+        </li>
+        <!-- Book button -->
+        <button
+          class="mr-6 border px-6 rounded-2xl bg-amber-600 text-center text-md font-serif italic hover:bg-amber-500 duration-400 cursor-pointer"
+        >
+          BOOK
+        </button>
+      </ul>
+    </nav>
+    <!-- Main content (under Nav bar) -->
+    <div>
+      <div>
+        <!-- Kitchen image -->
+        <img
+          class="w-full sepia brightness-50 background opacity-95 shadow-2xl"
+          src="images/LlamaChef.jpg"
+          alt=""
+        />
+        <div
+          class="text-3xl py-4 text-center italic font-extralight text-amber-200 opacity-60 font-[playfair]"
+        >
+          <p>“Where Good Food Meets Great Company - The Hungry Llama”</p>
+        </div>
+      </div>
+      <!-- Our food section -->
+      <section id="aboutUs" class="opacity-85">
+        <div class="mt-2">
+          <span class="flex flex-col-reverse md:flex-row justify-between m-1">
+            <!-- Our food Images -->
+            <div class="md:w-1/2 h-full md:mt-13">
+              <img
+                class="rounded mb-6"
+                src="images/peruvian-food-salchipapa.jpg"
+                alt=""
+              />
+              <img class="rounded" src="images/Ali Pacha-Dish-1.jpg" alt="" />
+            </div>
+            <!-- Our Food Text -->
+            <div class="flex flex-col items-center md:w-1/2 p-2 md:ml-2">
+              <h2 class="font-[playfair] text-4xl text-amber-950">Our Food</h2>
+              <p class="text-amber-950 text-center">
+                The Hungry Llama opened its doors in March 2023 and has quickly
+                become a beloved spot for food lovers seeking bold flavors and
+                warm hospitality. Behind The Hungry Llama are passionate chefs
+                and hosts with deep roots in the culinary world, bringing years
+                of experience and heart to everything they do. The kitchen is
+                led by Alejandro Rojas, a Bolivian chef known for blending
+                traditional recipes with a modern twist. Alejandro has cooked in
+                some of South America's most vibrant kitchens and brings that
+                energy and soul to every dish. The front of house is managed by
+                Camila Vargas, who ensures every guest feels like family the
+                moment they walk in.<br />
+                <br />
+                At The Hungry Llama, we don’t limit ourselves to one single
+                cooking style. Our inspiration comes from across Bolivia’s
+                diverse regions — from the Andes to the Amazon — and beyond. We
+                focus on preparing high-quality ingredients in the most
+                flavorful, eye-catching ways possible.<br />
+                <br />
+                The menu is a celebration of Bolivian cuisine: you’ll find
+                flavorful starters inspired by street markets, charcoal-grilled
+                meats cooked to perfection, fresh fish dishes, and a selection
+                of decadent desserts that you won’t want to miss. Every plate is
+                crafted with care, every drink served with a smile — and every
+                visit leaves you just a little hungrier for more.
+              </p>
+            </div>
+          </span>
+        </div>
+      </section>
+      <!-- The bar section -->
+      <!-- <section
+        style="background-image: url('/images/amazonicobar.jpg')"
+        class="bg-cover bg-center bg-blend-overlay bg-gradient-to-b from-amber-100 to-amber-500 h-[300px] m-1 opacity-85"
+      > -->
+      <section class="opacity-85 mt-6">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="flex flex-col items-center md:w-1/2 p-2 text-amber-950">
+            <h2 class="text-4xl font-[playfair]">The Bar</h2>
+            <p class="text-center">
+              At The Hungry Llama bar, we take pride in crafting high-quality,
+              house-made cocktails inspired by the rich flavors of Bolivia. We
+              steer clear of artificial colors and flavors, choosing instead to
+              create our own syrups, infusions, and signature blends using
+              natural, authentic ingredients. From handpicked Andean herbs to
+              tropical fruits from the lowlands, every drink is a nod to
+              Bolivia’s diverse regions. Our bar is part of a new wave of
+              cocktail culture — blending tradition and creativity to offer a
+              truly unique drinking experience in the heart of the city.
+            </p>
+          </div>
+          <div class="h-full md:w-1/2 m-1">
+            <img class="rounded" src="images/amazonicobar.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- Contact section -->
+      <section id="contactUs">
+        <div class="flex flex-col md:flex-row m-1 md:mt-6">
+          <!-- Here to help side -->
+          <div
+            class="flex flex-col items-center md:w-1/2 p-2 text-amber-950 md:mr-4"
+          >
+            <h2 class="text-4xl font-[playfair] md:mb-4">
+              We are here to help!
+            </h2>
+            <h3>
+              <strong
+                >Got a question, special request, or want to book a
+                table?</strong
+              >
+            </h3>
+            <p class="text-center">
+              Contact us and we’ll get back to you as soon as possible. We’re
+              here to make your Hungry Llama experience unforgettable!
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:w-1/2 p-2 text-amber-950">
+            <!-- Contact us form side -->
+            <h2 class="text-4xl font-[playfair]">Contact Us</h2>
+            <div class="class=flex flex-col md:flex-row">
+              <div class="flex flex-col mt-5 space-y-4">
+                <!-- Drop down -->
+                <!-- <label for="MessageType">Choose a car:</label> -->
+                <select
+                  name="contactType"
+                  id="contactMessage"
+                  class="bg-zinc-800 text-white p-2"
+                >
+                  <option value="general">General Request</option>
+                  <option value="restaurants">Restaurants</option>
+                  <option value="office">Office</option>
+                </select>
+                <input
+                  type="text"
+                  placeholder="Enter Your Name"
+                  class="p-2 px-4 text-center text-white bg-zinc-800 border border-zinc-600 placeholder:text-xs placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none"
+                />
+                <input
+                  type="text"
+                  placeholder="Enter Your Email Address"
+                  class="p-2 px-4 text-center text-white bg-zinc-800 border border-zinc-600 placeholder:text-xs placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none"
+                />
+                <textarea
+                  placeholder="Comment"
+                  class="bg-zinc-800 text-white p-2"
+                  id="w3review"
+                  name="w3review"
+                  rows="4"
+                  cols="50"
+                ></textarea>
+
+                <button
+                  class="px-5 py-3 text-xs rounded-md text-amber-950 bg-amber-500 hover:bg-amber-700 hover:text-white duration-500 cursor-pointer"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Address footer -->
+      <section>
+        <div class="flex flex-col md:flex-row text-amber-950">
+          <div class="w-1/2 p-6">
+            <div>
+              <h2 class="py-2 font-[playfair] text-3xl">Newsletter</h2>
+              <p class="py-2">
+                Want to know what we're upto? Sign up for the <br />
+                newsletter and stay up to date!
+              </p>
+              <div class="py-2">
+                <input
+                  type="text"
+                  placeholder="Enter Your Email Address"
+                  class="mr-0 p-2 px-4 text-center text-white bg-zinc-800 border-2 border-zinc-800 placeholder:text-xs placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none"
+                />
+                <span
+                  ><button
+                    class="ml-0 px-4 p-2 py-3 text-xs text-amber-950 bg-amber-100 hover:bg-amber-700 hover:text-white duration-500 cursor-pointer border-2 border-zinc-800"
+                  >
+                    Submit
+                  </button></span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- address and stuff -->
+          <div class="w-1/2 h-full p-6">
+            <div class="md:grid md:grid-cols-2 gap-4">
+              <div>
+                <h2 class="mb-2 font-bold">Opening Hours</h2>
+                <p class="text-xs">Sunday - Thursday: 12:00 - 23:00</p>
+                <p class="text-xs">Friday - Saturday: 12:00 - 01:00</p>
+              </div>
+              <div class="space-x-3">
+                <h2 class="mb-2 font-bold">Follow Us</h2>
+                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+              </div>
+              <div>
+                <h2 class="font-bold">Address</h2>
+                <p class="text-xs">
+                  Calle de la Comida 1404, Zona Llama Feliz, La Paz, Bolivia
+                </p>
+              </div>
+              <div>
+                <h2 class="mb-2 font-bold">Contact</h2>
+                <p class="text-xs">Telephone: +591 2 5553212</p>
+                <p class="text-xs">Email: frontdesk@hungryllama.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Icon source -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>

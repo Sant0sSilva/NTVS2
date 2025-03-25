@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="bg-gradient-to-b from-amber-600 to-amber-100 text-amber-950">
+    <!-- Nav Bar -->
+    <nav
+      class="p-5 bg-amber-600 shadow md:flex md:items-center md:justify-between"
+    >
+      <div class="flex justify-between items-center">
+        <!-- Hungry Llama logo -->
+        <span>
+          <img
+            class="h-12 w-12 m-0 mx-4 rounded-4xl opacity-85"
+            src="/images/hungryLlama.png"
+            alt=""
+          />
+        </span>
+        <!-- Nav bar title -->
+        <span
+          class="text-3xl font-light text-amber-100 font-[playfair] cursor-pointer italic"
+        >
+          The Hungry Llama
+        </span>
+        <!-- Hamberuger Menu Icon -->
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+        </span>
+      </div>
+      <!-- Nav bar list -->
+      <ul
+        id="navMenu"
+        class="text-amber-950 md:flex md:items-center z-[1] md:z-auto md:static absolute bg-amber-600 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+      >
+        <li class="mx-4 my-6 md:my-0">
+          <a href="index.html" class="text-xl hover:font-bold duration-500"
+            >Home</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="menu.html" class="text-xl hover:font-bold duration-500"
+            >Menu</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#aboutUs" class="text-xl hover:font-bold duration-500"
+            >About Us</a
+          >
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#contactUs" class="text-xl hover:font-bold duration-500"
+            >Contact</a
+          >
+        </li>
+        <!-- Book button -->
+        <button
+          class="mr-6 border px-6 rounded-2xl bg-amber-600 text-center text-md font-serif italic hover:bg-amber-500 duration-400 cursor-pointer"
+        >
+          BOOK
+        </button>
+      </ul>
+    </nav>
+    <div>
+      <!-- Kitchen image -->
+      <img
+        class="w-full brightness-100 background opacity-100 shadow-2xl"
+        src="images/Ali Pacha-Dish-1.jpg"
+        alt=""
+      />
+      <h1 class="font-[playfair] italic text-3xl text-center">menu</h1>
+      <div
+        class="text-3xl py-4 text-center italic font-extralight text-amber-200 opacity-60 font-[playfair]"
+      >
+        <p>“Where Good Food Meets Great Company - The Hungry Llama”</p>
+      </div>
+    </div>
+    <!-- Icon source -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
