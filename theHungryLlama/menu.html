@@ -7,253 +7,258 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body class="bg-gradient-to-b from-amber-600 to-amber-100 text-amber-950">
-    <!-- Nav Bar -->
-    <nav
-      class="p-5 bg-amber-600 shadow md:flex md:items-center md:justify-between"
-    >
-      <div class="flex justify-between items-center">
-        <!-- Hungry Llama logo -->
-        <span>
-          <img
-            class="h-12 w-12 m-0 mx-4 rounded-4xl opacity-85"
-            src="/images/hungryLlama.png"
-            alt=""
-          />
-        </span>
-        <!-- Nav bar title -->
-        <span
-          class="text-3xl font-light text-amber-100 font-[playfair] cursor-pointer italic"
-        >
-          The Hungry Llama
-        </span>
-        <!-- Hamberuger Menu Icon -->
-        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-          <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
-        </span>
-      </div>
-      <!-- Nav bar list -->
-      <ul
-        id="navMenu"
-        class="text-amber-950 md:flex md:items-center z-[1] md:z-auto md:static absolute bg-amber-600 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+  <body>
+    <div class="bg-gradient-to-b from-amber-600 to-amber-100 text-amber-950 w-">
+      <!-- Nav Bar -->
+      <nav
+        class="p-5 bg-amber-600 shadow md:flex md:items-center md:justify-between"
       >
-        <li class="mx-4 my-6 md:my-0">
-          <a href="index.html" class="text-xl hover:font-bold duration-500"
-            >Home</a
-          >
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-          <a href="menu.html" class="text-xl hover:font-bold duration-500"
-            >Menu</a
-          >
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-          <a href="#aboutUs" class="text-xl hover:font-bold duration-500"
-            >About Us</a
-          >
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-          <a href="#contactUs" class="text-xl hover:font-bold duration-500"
-            >Contact</a
-          >
-        </li>
-        <!-- Book button -->
-        <button
-          class="mr-6 border px-6 rounded-2xl bg-amber-600 text-center text-md font-serif italic hover:bg-amber-500 duration-400 cursor-pointer"
-        >
-          BOOK
-        </button>
-      </ul>
-    </nav>
-    <!-- Main content under nav bar -->
-    <div class="opacity-85">
-      <div>
-        <!-- Kitchen image -->
-        <img
-          class="w-full brightness-100 background opacity-100 shadow-2xl"
-          src="images/Ali Pacha-Dish-1.jpg"
-          alt=""
-        />
-        <h1 class="font-[playfair] italic text-4xl text-center mt-10 underline">
-          menu
-        </h1>
-      </div>
-      <!-- Menu Items -->
-      <section>
-        <!-- Starters -->
-        <div class="flex flex-col md:flex-row mt-10 mx-1">
-          <div class="md:w-1/2 font-[playfair] italic text-2xl text-center">
-            <div class="flex flex-col m-4">
-              <h2 class="underline">Starters</h2>
-              <p class="mt-2">
-                <strong>Empanadas:</strong> Golden pastry filled with your
-                choice of chicken, beef, or cheese, served with a side of spicy
-                peanut sauce.
-              </p>
-              <p class="mt-2">
-                <strong>Anticuchos:</strong> Grilled skewers of marinated beef
-                heart, accompanied by boiled potatoes and a spicy llajwa sauce.
-              </p>
-              <p class="mt-2">
-                <strong>Salteñas:</strong> Savory baked pastries filled with a
-                juicy mixture of meat, potatoes, peas, and olives, seasoned with
-                traditional Bolivian spices.​
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2 mt-10">
-            <img class="rounded" src="images/Anticuchos.jpg" alt="" />
-          </div>
-        </div>
-
-        <!-- mains -->
-        <div class="flex flex-col md:flex-row-reverse mt-10 mx-1">
-          <div class="md:w-1/2 font-[playfair] italic text-2xl text-center">
-            <div class="flex flex-col m-4">
-              <h2 class="underline">Main Courses</h2>
-              <p class="mt-2">
-                <strong>Pique Macho:</strong> A hearty platter of bite-sized
-                beef, sausages, boiled eggs, and fries, topped with sautéed
-                onions and locoto peppers.
-              </p>
-              <p class="mt-2">
-                <strong>Silpancho:</strong> Breaded and fried beef cutlet served
-                over rice and potatoes, topped with a fried egg and fresh tomato
-                salsa. ​
-              </p>
-              <p class="mt-2">
-                <strong>Fricasé:</strong> A rich pork stew cooked with yellow
-                chili peppers, garlic, and spices, traditionally served with
-                hominy corn.
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2 mt-10">
-            <img class="rounded" src="images/figs.jpg" alt="" />
-          </div>
-        </div>
-
-        <!-- Sides -->
-        <div class="flex flex-col md:flex-row mt-10 mx-1">
-          <div class="md:w-1/2 font-[playfair] italic text-2xl text-center">
-            <div class="flex flex-col m-4">
-              <h2 class="underline">Sides</h2>
-              <p class="mt-2">
-                <strong>Yuca Frita:</strong> Crispy fried cassava sticks,
-                perfect for dipping in a tangy salsa.
-              </p>
-              <p class="mt-2">
-                <strong>Arroz con Queso:</strong> Creamy rice cooked with melted
-                cheese, a comforting Bolivian favorite
-              </p>
-
-              <p class="mt-2">
-                <strong>Papitas:</strong> Seasoned and fried small potatoes,
-                offering a delightful crispy texture.
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2 mt-10">
-            <img class="rounded" src="images/papitas-4.jpg" alt="" />
-          </div>
-        </div>
-
-        <!-- Deserts -->
-        <div class="flex flex-col md:flex-row-reverse mt-10 mx-1">
-          <div class="md:w-1/2 font-[playfair] italic text-2xl text-center">
-            <div class="flex flex-col m-4">
-              <h2 class="underline">Sides</h2>
-              <p class="mt-2">
-                <strong>Buñuelos:</strong> Fluffy fried dough drizzled with
-                syrup or honey, often enjoyed during festive occasions.
-              </p>
-              <p class="mt-2">
-                <strong>Cocadas:</strong> Sweet coconut biscuits made with
-                condensed milk, offering a chewy and delightful treat.
-              </p>
-
-              <p class="mt-2">
-                <strong>Leche Asada:</strong> A traditional baked milk custard
-                with a caramelized top, similar to flan but with a unique
-                Bolivian twist.
-              </p>
-            </div>
-          </div>
-          <div class="md:w-1/2 mt-10">
+        <div class="flex justify-between items-center">
+          <!-- Hungry Llama logo -->
+          <span>
             <img
-              class="rounded"
-              src="images/bunuelos-643434e2c3964.avif"
+              class="h-12 w-12 m-0 mx-4 rounded-4xl opacity-85"
+              src="/images/hungryLlama.png"
               alt=""
             />
-          </div>
+          </span>
+          <!-- Nav bar title -->
+          <span
+            class="text-3xl font-light text-amber-100 font-[playfair] cursor-pointer italic"
+          >
+            The Hungry Llama
+          </span>
+          <!-- Hamberuger Menu Icon -->
+          <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+            <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
+          </span>
         </div>
-      </section>
-
-      <!-- footer -->
-      <section class="mt-40">
-        <div class="flex flex-col md:flex-row text-amber-950">
-          <div class="w-1/2 p-6">
-            <div class="flex flex-col">
-              <h2 class="py-2 font-[playfair] text-3xl">Newsletter</h2>
-              <p class="py-2">
-                Want to know what we're upto? Sign up for the <br />
-                newsletter and stay up to date!
-              </p>
-              <div class="py-2">
-                <input
-                  type="text"
-                  placeholder="Enter Your Email Address"
-                  class="my-2 mr-0 p-2 px-4 text-center text-white bg-zinc-800 border-2 border-zinc-800 placeholder:text-xs placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none"
-                />
-                <span
-                  ><button
-                    class="ml-0 px-4 p-2 py-3 text-xs text-amber-950 bg-amber-100 hover:bg-amber-700 hover:text-white duration-500 cursor-pointer border-2 border-zinc-800"
-                  >
-                    Submit
-                  </button></span
-                >
-              </div>
-            </div>
-          </div>
-          <!-- address and stuff -->
-          <div class="w-1/2 h-full p-6">
-            <div class="md:grid md:grid-cols-2 gap-4">
-              <div>
-                <h2 class="mb-2 font-bold">Opening Hours</h2>
-                <p class="text-xs">Sunday - Thursday: 12:00 - 23:00</p>
-                <p class="text-xs">Friday - Saturday: 12:00 - 01:00</p>
-              </div>
-              <div class="space-x-3">
-                <h2 class="mb-2 font-bold">Follow Us</h2>
-                <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
-              </div>
-              <div>
-                <h2 class="font-bold">Address</h2>
-                <p class="text-xs">
-                  Calle de la Comida 1404, Zona Llama Feliz, La Paz, Bolivia
+        <!-- Nav bar list -->
+        <ul
+          id="navMenu"
+          class="text-amber-950 md:flex md:items-center z-[1] md:z-auto md:static absolute bg-amber-600 w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500"
+        >
+          <li class="mx-4 my-6 md:my-0">
+            <a href="index.html" class="text-xl hover:font-bold duration-500"
+              >Home</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="menu.html" class="text-xl hover:font-bold duration-500"
+              >Menu</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#aboutUs" class="text-xl hover:font-bold duration-500"
+              >About Us</a
+            >
+          </li>
+          <li class="mx-4 my-6 md:my-0">
+            <a href="#contactUs" class="text-xl hover:font-bold duration-500"
+              >Contact</a
+            >
+          </li>
+          <!-- Book button -->
+          <button
+            class="mr-6 border px-6 rounded-2xl bg-amber-600 text-center text-md font-serif italic hover:bg-amber-500 duration-400 cursor-pointer"
+          >
+            BOOK
+          </button>
+        </ul>
+      </nav>
+      <!-- Main content under nav bar -->
+      <div class="opacity-80">
+        <div>
+          <!-- banner image -->
+          <img
+            class="w-full brightness-100 background opacity-100 shadow-2xl"
+            src="images/Ali Pacha-Dish-1.jpg"
+            alt=""
+          />
+          <h1
+            class="font-[playfair] italic text-4xl text-center mt-10 underline"
+          >
+            Menu
+          </h1>
+        </div>
+        <!-- Menu Items -->
+        <section>
+          <!-- Starters -->
+          <div class="flex flex-col md:flex-row mt-10 mx-1">
+            <div class="md:w-1/2 font-[playfair] italic text-3xl text-center">
+              <div class="flex flex-col m-4">
+                <h2 class="underline">Starters</h2>
+                <p class="mt-2">
+                  <strong>Empanadas:</strong> Golden pastry filled with your
+                  choice of chicken, beef, or cheese, served with a side of
+                  spicy peanut sauce.
+                </p>
+                <p class="mt-2">
+                  <strong>Anticuchos:</strong> Grilled skewers of marinated beef
+                  heart, accompanied by boiled potatoes and a spicy llajwa
+                  sauce.
+                </p>
+                <p class="mt-2">
+                  <strong>Salteñas:</strong> Savory baked pastries filled with a
+                  juicy mixture of meat, potatoes, peas, and olives, seasoned
+                  with traditional Bolivian spices.​
                 </p>
               </div>
-              <div>
-                <h2 class="mb-2 font-bold">Contact</h2>
-                <p class="text-xs">Telephone: +591 2 5553212</p>
-                <p class="text-xs">Email: frontdesk@hungryllama.com</p>
+            </div>
+            <div class="md:w-1/2 mt-10 w-full">
+              <img class="rounded w-full" src="images/Anticuchos.jpg" alt="" />
+            </div>
+          </div>
+
+          <!-- mains -->
+          <div class="flex flex-col md:flex-row-reverse mt-10 mx-1">
+            <div class="md:w-1/2 font-[playfair] italic text-3xl text-center">
+              <div class="flex flex-col m-4">
+                <h2 class="underline">Main Courses</h2>
+                <p class="mt-2">
+                  <strong>Pique Macho:</strong> A hearty platter of bite-sized
+                  beef, sausages, boiled eggs, and fries, topped with sautéed
+                  onions and locoto peppers.
+                </p>
+                <p class="mt-2">
+                  <strong>Silpancho:</strong> Breaded and fried beef cutlet
+                  served over rice and potatoes, topped with a fried egg and
+                  fresh tomato salsa. ​
+                </p>
+                <p class="mt-2">
+                  <strong>Fricasé:</strong> A rich pork stew cooked with yellow
+                  chili peppers, garlic, and spices, traditionally served with
+                  hominy corn.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2 mt-10">
+              <img class="rounded w-full" src="images/figs.jpg" alt="" />
+            </div>
+          </div>
+
+          <!-- Sides -->
+          <div class="flex flex-col md:flex-row mt-10 mx-1">
+            <div class="md:w-1/2 font-[playfair] italic text-3xl text-center">
+              <div class="flex flex-col m-4">
+                <h2 class="underline">Sides</h2>
+                <p class="mt-2">
+                  <strong>Yuca Frita:</strong> Crispy fried cassava sticks,
+                  perfect for dipping in a tangy salsa.
+                </p>
+                <p class="mt-2">
+                  <strong>Arroz con Queso:</strong> Creamy rice cooked with
+                  melted cheese, a comforting Bolivian favorite
+                </p>
+
+                <p class="mt-2">
+                  <strong>Papitas:</strong> Seasoned and fried small potatoes,
+                  offering a delightful crispy texture.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2 mt-10">
+              <img class="rounded w-full" src="images/papitas-4.jpg" alt="" />
+            </div>
+          </div>
+
+          <!-- Deserts -->
+          <div class="flex flex-col md:flex-row-reverse mt-10 mx-1">
+            <div class="md:w-1/2 font-[playfair] italic text-3xl text-center">
+              <div class="flex flex-col m-4">
+                <h2 class="underline">Sides</h2>
+                <p class="mt-2">
+                  <strong>Buñuelos:</strong> Fluffy fried dough drizzled with
+                  syrup or honey, often enjoyed during festive occasions.
+                </p>
+                <p class="mt-2">
+                  <strong>Cocadas:</strong> Sweet coconut biscuits made with
+                  condensed milk, offering a chewy and delightful treat.
+                </p>
+
+                <p class="mt-2">
+                  <strong>Leche Asada:</strong> A traditional baked milk custard
+                  with a caramelized top, similar to flan but with a unique
+                  Bolivian twist.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-1/2 mt-10">
+              <img
+                class="rounded"
+                src="images/bunuelos-643434e2c3964.avif"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- footer -->
+        <section class="mt-40">
+          <div class="flex flex-col md:flex-row text-amber-950">
+            <div class="w-1/2 p-6">
+              <div class="flex flex-col">
+                <h2 class="py-2 font-[playfair] text-3xl">Newsletter</h2>
+                <p class="py-2">
+                  Want to know what we're upto? Sign up for the <br />
+                  newsletter and stay up to date!
+                </p>
+                <div class="py-2">
+                  <input
+                    type="text"
+                    placeholder="Enter Your Email Address"
+                    class="my-2 mr-0 p-2 px-4 text-center text-white bg-zinc-800 border-2 border-zinc-800 placeholder:text-xs placeholder:text-center md:text-left placeholder:md:text-left focus:outline-none"
+                  />
+                  <span
+                    ><button
+                      class="ml-0 px-4 p-2 py-3 text-xs text-amber-950 bg-amber-100 hover:bg-amber-700 hover:text-white duration-500 cursor-pointer border-2 border-zinc-800"
+                    >
+                      Submit
+                    </button></span
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- address and stuff -->
+            <div class="w-1/2 h-full p-6">
+              <div class="md:grid md:grid-cols-2 gap-4">
+                <div>
+                  <h2 class="mb-2 font-bold">Opening Hours</h2>
+                  <p class="text-xs">Sunday - Thursday: 12:00 - 23:00</p>
+                  <p class="text-xs">Friday - Saturday: 12:00 - 01:00</p>
+                </div>
+                <div class="space-x-3">
+                  <h2 class="mb-2 font-bold">Follow Us</h2>
+                  <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                  <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                  <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                </div>
+                <div>
+                  <h2 class="font-bold">Address</h2>
+                  <p class="text-xs">
+                    Calle de la Comida 1404, Zona Llama Feliz, La Paz, Bolivia
+                  </p>
+                </div>
+                <div>
+                  <h2 class="mb-2 font-bold">Contact</h2>
+                  <p class="text-xs">Telephone: +591 2 5553212</p>
+                  <p class="text-xs">Email: frontdesk@hungryllama.com</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
+      <!-- Icon source -->
+      <script
+        type="module"
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      ></script>
+      <script
+        nomodule
+        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      ></script>
+      <script src="script.js"></script>
     </div>
-    <!-- Icon source -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="script.js"></script>
   </body>
 </html>
