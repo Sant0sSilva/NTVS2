@@ -3,6 +3,11 @@
 // In other words, it should not be null or undefined or false
 // Return false otherwise
 const checkIfPropertyExistsAndTruthy = (a, b) => {
+  if (a[b]) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 /*
@@ -18,8 +23,8 @@ myFunction({x:'a',b:'b',z:undefined},'z') Expected false
 // It should return the value of the property with key country
 
 const getCountry = (obj) => {
+  return obj["country"];
 };
-
 
 /*
 Test cases:
@@ -33,8 +38,8 @@ myFunction({ country: 'Sweden', continent: 'Europe' }) Expected 'Sweden'
 // It should return the value of the property with key 'prop-2'
 // Tip: you might want to use the square brackets to access the property
 const getWeirdKeyValue = (obj) => {
+  return obj["prop-2"];
 };
-
 
 /*
 Test cases:
@@ -48,8 +53,8 @@ myFunction({  'prop-2': 'two',  prop: 'test'}) Expected 'two'
 // It should return the value of the property with key equal to the value of the string
 
 const getPropertyByString = (obj, key) => {
+  return obj[key];
 };
-
 
 /*
 Test cases:
@@ -64,9 +69,12 @@ myFunction({  country: 'Sweden',  continent: 'Europe'}, 'country') Expected 'Swe
 // Return false otherwise
 // NOTE: Test case 3 is a bit tricky because the value of property 'z' is undefined, but the property itself exists
 const checkIfPropertyExists = (a, b) => {
+  if (a.hasOwnProperty(b)) {
+    return true;
+  } else {
+    return false;
+  }
 };
-
-
 
 /*
 Test cases:
@@ -81,8 +89,8 @@ myFunction({x:'a',y:'b',z:undefined},'z') Expected true
 // Create an object that has a property with key 'key' and a value equal to the string
 // Return the object
 const createObjectWithKeyValue = (a) => {
+  return { key: a };
 };
-
 
 /*
 Test cases:
@@ -97,8 +105,8 @@ myFunction('b') Expected {key:'b'}
 // Create an object that has a property with key 'a' and a value of 'b'
 // Return the object
 const createObjectWithKeyAndValue = (a, b) => {
+  return { [a]: b };
 };
-
 
 /*
 Test cases:
@@ -113,6 +121,11 @@ myFunction('b','w') Expected {b:'w'}
 // Create an object that has properties with keys 'a' and corresponding values 'b'
 // Return the object
 const createObjectFromArrays = (a, b) => {
+  result = a.reduce((obj, key, index) => {
+    obj[key] = b[index];
+    return obj;
+  }, {});
+  return result;
 };
 
 /*
@@ -127,6 +140,8 @@ myFunction([1,'b'],['a',2]) Expected {1:'a',b:2}
 // Return an array with all object keys
 // Tip: Object.keys()
 const extractKeysFromObject = (a) => {
+  result = Object.keys(a);
+  return result;
 };
 
 /*
@@ -142,6 +157,7 @@ myFunction({w:15,x:22,y:13}) Expected ['w','x','y']
 // Return the property 'b' of object 'a' inside the original object if it exists
 // If not, return undefined
 const getNestedProperty = (obj) => {
+  return obj?.a?.b;
 };
 
 /*
@@ -157,6 +173,11 @@ myFunction({a:{b:2}}) Expected 2
 // Return the sum of all object values
 // Tip: Object.values()
 const calcSumOfAllObjectValues = (a) => {
+  result = Object.values(a);
+  return result.reduce((acc, cur) => {
+    acc += cur;
+    return acc;
+  }, 0);
 };
 
 /*
@@ -172,6 +193,8 @@ myFunction({w:15,x:22,y:13}) Expected 50
 // except for the property with key 'b'
 // Tip: Spread syntax
 const removePropertyB = (obj) => {
+  const { b, ...rest } = obj;
+  return rest;
 };
 
 /*
@@ -191,7 +214,11 @@ myFunction({ e: 6, f: 4, b: 5, a: 3 }) Expected { e: 6, f: 4, a: 3 }
 // It should have the properties 'a', 'b', 'c', 'd', and 'e'
 // Tip: Spread syntax
 const mergeAndFixObjects = (x, y) => {
+  const { b: d, ...rest } = y;
+  newObject = { ...x, ...rest, d };
+  return newObject;
 };
+
 /*
 Test cases:
 myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 }) Expected { a: 1, b: 2, c: 3, e: 5, d: 4}
@@ -204,6 +231,21 @@ myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }) Expected { a: 5, b: 4, c: 3, e:
 // Multiply all values of 'a' by 'b'
 // Return the resulting object
 const multipyAllValuesByB = (a, b) => {
+  const keyArray = Object.keys(a);
+  const valueArray = Object.values(a);
+
+  for (let i = 0; i < valueArray.length; i++) {
+    valueArray[i] = valueArray[i] * b;
+  }
+  const objectToArray = (keyArray, valueArray) => {
+    const result = keyArray.reduce((obj, key, index) => {
+      obj[key] = valueArray[index];
+
+      return obj;
+    }, {});
+    return result;
+  };
+  return objectToArray(keyArray, valueArray);
 };
 
 /*
@@ -227,5 +269,5 @@ module.exports = {
   calcSumOfAllObjectValues,
   removePropertyB,
   mergeAndFixObjects,
-  multipyAllValuesByB
-}
+  multipyAllValuesByB,
+};
