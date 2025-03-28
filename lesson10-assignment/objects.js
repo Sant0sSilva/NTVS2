@@ -235,7 +235,7 @@ const multipyAllValuesByB = (a, b) => {
   const valueArray = Object.values(a);
 
   for (let i = 0; i < valueArray.length; i++) {
-    valueArray[i] = valueArray[i] * b;
+    valueArray[i] *= b;
   }
   const objectToArray = (keyArray, valueArray) => {
     const result = keyArray.reduce((obj, key, index) => {
@@ -255,19 +255,19 @@ myFunction({j:9,i:2,x:3,z:4},10) Expected {j:90,i:20,x:30,z:40}
 myFunction({w:15,x:22,y:13},6) Expected {w:90,x:132,y:78}
 */
 
-module.exports = {
-  checkIfPropertyExistsAndTruthy,
-  getCountry,
-  getWeirdKeyValue,
-  getPropertyByString,
-  checkIfPropertyExists,
-  createObjectWithKeyValue,
-  createObjectWithKeyAndValue,
-  createObjectFromArrays,
-  extractKeysFromObject,
-  getNestedProperty,
-  calcSumOfAllObjectValues,
-  removePropertyB,
-  mergeAndFixObjects,
-  multipyAllValuesByB,
-};
+// module.exports = {
+//   checkIfPropertyExistsAndTruthy,
+//   getCountry,
+//   getWeirdKeyValue,
+//   getPropertyByString,
+//   checkIfPropertyExists,
+//   createObjectWithKeyValue,
+//   createObjectWithKeyAndValue,
+//   createObjectFromArrays,
+//   extractKeysFromObject,
+//   getNestedProperty,
+//   calcSumOfAllObjectValues,
+//   removePropertyB,
+//   mergeAndFixObjects,
+//   multipyAllValuesByB,
+// };
