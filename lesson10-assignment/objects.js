@@ -232,11 +232,12 @@ myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }) Expected { a: 5, b: 4, c: 3, e:
 // Return the resulting object
 const multipyAllValuesByB = (a, b) => {
   const keyArray = Object.keys(a);
-  const valueArray = Object.values(a);
+  const valueArray = Object.values(a).map((el) => el * b);
 
-  for (let i = 0; i < valueArray.length; i++) {
-    valueArray[i] *= b;
-  }
+  // for (let i = 0; i < valueArray.length; i++) {
+  //   valueArray[i] *= b;
+  // }
+
   const objectToArray = (keyArray, valueArray) => {
     const result = keyArray.reduce((obj, key, index) => {
       obj[key] = valueArray[index];
@@ -247,6 +248,8 @@ const multipyAllValuesByB = (a, b) => {
   };
   return objectToArray(keyArray, valueArray);
 };
+
+console.log(multipyAllValuesByB({ a: 1, b: 2, c: 3 }, 3));
 
 /*
 Test cases:
