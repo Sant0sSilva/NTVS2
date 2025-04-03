@@ -7,7 +7,6 @@ const cells = []; // Store cell references
 
 const boardElement = document.getElementById("board");
 const statusElement = document.getElementById("status");
-const resetButton = document.getElementById("");
 
 const WIN_PATTERNS = [
   [0, 1, 2],
@@ -33,7 +32,6 @@ function handleClick(index) {
     currentPlayer = "X";
   }
   statusElement.innerHTML = `Player ${currentPlayer}'s turn`;
-  console.log(cells[index]);
   checkWinner();
   if (checkWinner() === true) {
   }
@@ -47,11 +45,10 @@ function checkWinner() {
     const cellC = gameBoard[pattern[2]];
 
     if (cellA == null || cellB == null || cellC == null) {
-      console.log("no winner");
       continue;
     }
     if (cellA === cellB && cellB === cellC) {
-      statusElement.innerHTML = `Player ${cellA} wins!!!!`;
+      statusElement.innerHTML = `🥳🥳🥳Player ${cellA} wins!!!!🥳🥳🥳`;
       return true;
     }
   }
@@ -74,4 +71,3 @@ function createBoard() {
 }
 
 createBoard();
-console.log(cells);
