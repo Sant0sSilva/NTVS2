@@ -33,16 +33,18 @@ function handleClick(index) {
   }
   statusElement.innerHTML = `Player ${currentPlayer}'s turn`;
   checkWinner();
-  if (checkWinner() === true) {
-  }
 }
 
 function checkWinner() {
   for (let i = 0; i < WIN_PATTERNS.length; i++) {
     const pattern = WIN_PATTERNS[i];
+    // console.log(`(pattern)iteration ${i}: ${pattern}`);
     const cellA = gameBoard[pattern[0]];
+    // console.log(`iteration ${i} cellA : ${cellA}`);
     const cellB = gameBoard[pattern[1]];
+    // console.log(`iteration ${i} cellB: ${cellB}`);
     const cellC = gameBoard[pattern[2]];
+    // console.log(`iteration ${i} cellC: ${cellC}`);
 
     if (cellA == null || cellB == null || cellC == null) {
       continue;
