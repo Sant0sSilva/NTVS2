@@ -23,16 +23,18 @@ const WIN_PATTERNS = [
 // of the player whose turn it is, and check if there's a winner.
 // If there is no winner, swap player's turn
 function handleClick(index) {
-  gameBoard[index] = currentPlayer;
+  if (gameBoard[index] === null) {
+    gameBoard[index] = currentPlayer;
 
-  document.getElementById(`cell-${index}`).innerHTML = `${currentPlayer}`;
-  if (currentPlayer === "X") {
-    currentPlayer = "O";
-  } else {
-    currentPlayer = "X";
+    document.getElementById(`cell-${index}`).innerHTML = `${currentPlayer}`;
+    if (currentPlayer === "X") {
+      currentPlayer = "O";
+    } else {
+      currentPlayer = "X";
+    }
+    statusElement.innerHTML = `Player ${currentPlayer}'s turn`;
+    checkWinner();
   }
-  statusElement.innerHTML = `Player ${currentPlayer}'s turn`;
-  checkWinner();
 }
 
 function checkWinner() {
