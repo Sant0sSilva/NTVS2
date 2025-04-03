@@ -52,6 +52,7 @@ function checkWinner() {
       continue;
     }
     if (cellA === cellB && cellB === cellC) {
+      // cellA is always the winners symbol
       statusElement.innerHTML = `🥳🥳🥳Player ${cellA} wins!!!!🥳🥳🥳`;
       return true;
     }
