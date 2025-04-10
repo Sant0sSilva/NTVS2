@@ -44,7 +44,7 @@ const QuoteGenerator = () => {
         <div className="flex h-24 justify-center">
           <button
             className={`${
-              isBig ? "scale-120" : "scale-100"
+              isBig && "scale-120"
             } bg-green-600 py-4 px-6 mx-10 rounded-md text-white text-xl font-semibold cursor-pointer m-4 hover:bg-green-800 transition duration-300`}
             onClick={() => {
               setQuote(getQuoteRandomly());
