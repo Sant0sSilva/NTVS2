@@ -3,21 +3,21 @@
 import { useState } from "react";
 
 const Footer = () => {
-  const [isBig, setIsBig] = useState(false);
+  const [isRotate, setIsRotate] = useState(false);
   return (
     <div className="flex justify-center w-50 h-58">
       <img
         onFocus={() => {}}
         onMouseOver={() => {
-          setIsBig(true);
+          setIsRotate(true);
         }}
         onMouseOut={() => {
-          setIsBig(false);
+          setIsRotate(false);
         }}
         src="\donkey.jpg"
         alt="Donkey image"
         className={`${
-          isBig && "scale-120"
+          isRotate && "rotate-12"
         } rounded-full mt-8 transition duration-300`}
       />
     </div>
