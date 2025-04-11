@@ -38,7 +38,7 @@ const QuoteGenerator = () => {
         <input
           placeholder="Donkey?"
           type="text"
-          className="min-w-50 max-w-50 rounded-md bg-white py-2 mx-10 indent-4 focus:outline-green-500 outline-2  outline-gray-300"
+          className="min-w-50 max-w-50 rounded-md bg-white py-2 mx-10 indent-4 focus:outline-green-500 outline-2  outline-gray-300 text-black"
         />
         {/* Button box */}
         <div className="flex h-24 justify-center">
