@@ -21,7 +21,7 @@ const TypeInputter = () => {
         <input
           placeholder="Shrek !!"
           type="text"
-          className="min-w-50 max-w-50 rounded-md bg-white py-2 mx-10 indent-4 focus:outline-green-500 outline-2  outline-gray-300 "
+          className="min-w-50 max-w-50 rounded-md bg-white py-2 mx-10 indent-4 focus:outline-green-500 outline-2  outline-gray-300 text-black"
           onChange={onInputChange}
           onKeyDown={onKeyDown}
         />
