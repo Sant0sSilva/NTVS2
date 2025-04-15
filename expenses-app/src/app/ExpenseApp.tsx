@@ -2,18 +2,12 @@
 import AddExpense from "@/Components/addExpense/AddExpenseForm";
 import Stats from "@/Components/addExpense/Stats";
 import { ExpenseList } from "@/Components/expenseList/ExpenseList";
-
-type Expense = {
-  name: string;
-  cost: number;
-  id: number;
-};
+import { Expense } from "@/app/page";
 
 type ExpenseAppProps = {
   expenses: Expense[];
   count: number;
   sum: number;
-
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
 };
 

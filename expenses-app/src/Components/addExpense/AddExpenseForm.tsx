@@ -1,15 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { Expense } from "@/app/page";
 
 type AddExpenseProp = {
   expenses: Expense[];
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
-};
-type Expense = {
-  name: string;
-  cost: number;
-  id: number;
 };
 
 const AddExpense = ({ setExpenses, expenses }: AddExpenseProp) => {

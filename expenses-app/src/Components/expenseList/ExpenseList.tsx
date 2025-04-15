@@ -2,12 +2,7 @@
 
 import React from "react";
 import ItemCard from "./ItemCard";
-
-type Expense = {
-  name: string;
-  cost: number;
-  id: number;
-};
+import { Expense } from "@/app/page";
 
 type ExpenseListProps = {
   expenses: Expense[];

@@ -7,7 +7,7 @@ import ExpenseApp from "./ExpenseApp";
 //   return arr.reduce((total, item) => total + item.cost, 0);
 // };
 
-type Expense = {
+export type Expense = {
   name: string;
   cost: number;
   id: number;

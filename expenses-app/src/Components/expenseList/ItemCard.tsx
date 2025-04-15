@@ -1,10 +1,5 @@
 import { useState } from "react";
-
-type Expense = {
-  name: string;
-  cost: number;
-  id: number;
-};
+import { Expense } from "@/app/page";
 
 type ItemCardProps = {
   expense: Expense;
