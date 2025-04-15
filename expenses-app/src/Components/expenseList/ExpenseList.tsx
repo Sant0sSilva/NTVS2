@@ -11,15 +11,16 @@ type Expense = {
 
 type ExpenseListProps = {
   expenses: Expense[];
+  setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
 };
 
-export const ExpenseList = ({ expenses }: ExpenseListProps) => {
+export const ExpenseList = ({ expenses, setExpenses }: ExpenseListProps) => {
   return (
     <div>
       <ul>
         {expenses.map((expense: Expense) => (
           <li className="mb-2" key={expense.id}>
-            <ItemCard expense={expense} />
+            <ItemCard expense={expense} setExpenses={setExpenses} />
           </li>
         ))}
       </ul>

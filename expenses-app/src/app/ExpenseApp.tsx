@@ -28,7 +28,7 @@ const ExpenseApp = ({ sum, count, setExpenses, expenses }: ExpenseAppProps) => {
       </div>
       <div className=" h-lvh w-1/2 items-center  ">
         <div className="flex flex-col items-center p-12">
-          <ExpenseList expenses={expenses} />
+          <ExpenseList expenses={expenses} setExpenses={setExpenses} />
         </div>
       </div>
     </div>
