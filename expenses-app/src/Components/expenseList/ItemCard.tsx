@@ -19,8 +19,12 @@ const ItemCard = ({ expense }: ItemCardProps) => {
   return (
     <div className="flex border-2 border-teal-300 w-84 ">
       <div className="w-3/5 my-4 mx-4">
-        <p className="font-bold">Name: {expense.name}</p>
-        <p className="font-bold">Cost: {expense.cost} </p>
+        <p>
+          <strong>Name: </strong> {expense.name}
+        </p>
+        <p>
+          <strong>Cost: </strong> {expense.cost}
+        </p>
       </div>
       <div className="flex flex-col w-2/5 items-end">
         <p className="m-1">X</p>

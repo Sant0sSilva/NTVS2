@@ -16,32 +16,22 @@ const AddExpense = ({ setExpenses, expenses }: AddExpenseProp) => {
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
 
-  //   const onAddExpense = () => {
-  //     const newExpense: Expense = {
-  //       name,
-  //       cost: Number(cost),
-  //       id: Date.now(),
-  //     };
-
-  //     setExpenses = (prev) => [...prev, newExpense];
-
-  //     setName("");
-  //     setCost("");
-  //     console.log("Added new expense", newExpense, "to:");
-  //   };
-
   const onAddExpense = () => {
-    const newExpense: Expense = {
-      name,
-      cost: Number(cost),
-      id: Date.now(), // 👈 crude unique ID
-    };
+    if (!name || !cost || isNaN(Number(cost))) {
+      return;
+    } else {
+      const newExpense: Expense = {
+        name,
+        cost: Number(cost),
+        id: Date.now(),
+      };
 
-    setExpenses((prev) => [...prev, newExpense]); // ✅ actually adds it
+      setExpenses((prev) => [...prev, newExpense]);
 
-    setName("");
-    setCost("");
-    console.log("Added:", newExpense, "to:", [...expenses]);
+      setName("");
+      setCost("");
+      console.log("Added:", newExpense, "to:", [...expenses]);
+    }
   };
 
   return (
