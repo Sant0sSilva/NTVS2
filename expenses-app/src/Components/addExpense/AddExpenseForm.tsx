@@ -8,7 +8,7 @@ type AddExpenseProp = {
   setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
 };
 
-const AddExpense = ({ setExpenses, expenses }: AddExpenseProp) => {
+const AddExpense = ({ setExpenses }: AddExpenseProp) => {
   const [name, setName] = useState("");
   const [cost, setCost] = useState("");
 
