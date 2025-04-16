@@ -8,11 +8,12 @@ type ItemCardProps = {
 
 const ItemCard = ({ expense, setExpenses }: ItemCardProps) => {
   const [isFading, setIsFading] = useState(false);
+
   const onRemoveExpense = () => {
     setIsFading(true);
     setTimeout(() => {
       setExpenses((prev) => prev.filter((e) => e.id !== expense.id));
-    }, 1000);
+    }, 500);
   };
 
   return (

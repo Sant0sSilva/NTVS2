@@ -72,5 +72,5 @@ body {
 }
 
 .fadeOut {
-  animation: 1000ms ease 0s normal forwards 1 fadeOut;
+  animation: 500ms ease 0s normal forwards 1 fadeOut;
 }

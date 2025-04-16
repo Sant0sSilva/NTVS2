@@ -26,7 +26,6 @@ const AddExpense = ({ setExpenses, expenses }: AddExpenseProp) => {
 
       setName("");
       setCost("");
-      console.log("Added:", newExpense, "to:", [...expenses]);
     }
   };
 
