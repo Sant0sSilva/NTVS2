@@ -1,36 +1,57 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Counter, { CounterRef } from "@/Components/Counter";
+import { useRef } from "react";
 
-const heavyFibonacci = (n: number): number => {
-  if (n <= 1) return n;
-  return heavyFibonacci(n - 1) + heavyFibonacci(n - 2);
-};
+// import { useEffect, useRef, useState } from "react";
 
-const Home = () => {
-  const [words, setWords] = useState("");
-  const inputValueRef = useRef("");
-  console.log("rendering");
+// const heavyFibonacci = (n: number): number => {
+//   if (n <= 1) return n;
+//   return heavyFibonacci(n - 1) + heavyFibonacci(n - 2);
+// };
 
-  // useEffect(() => {
-  //   inputValueRef.current = words;
-  // }, [words]);
+// const Home = () => {
+//   const [words, setWords] = useState("");
+//   const inputValueRef = useRef("");
+//   console.log("rendering");
 
-  // console.log("Finished rendering", heavyFibonacci(40));
+//   // useEffect(() => {
+//   //   inputValueRef.current = words;
+//   // }, [words]);
+
+//   // console.log("Finished rendering", heavyFibonacci(40));
+//   return (
+//     <div className="p-10">
+//       <p>Home</p>
+//       <input
+//         type="text"
+//         className="border rounded"
+//         onChange={(e) => (inputValueRef.current = e.target.value)}
+//       />
+//       <button className="ml-2" onClick={() => setWords(inputValueRef.current)}>
+//         Submit Value
+//       </button>
+//       <p className="mt-3">{inputValueRef.current} </p>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+function Demo() {
+  const counterRef = useRef<CounterRef>(null);
+
   return (
-    <div className="p-10">
-      <p>Home</p>
-      <input
-        type="text"
-        className="border rounded"
-        onChange={(e) => (inputValueRef.current = e.target.value)}
-      />
-      <button className="ml-2" onClick={() => setWords(inputValueRef.current)}>
-        Submit Value
+    <div>
+      <div className="mb-2"></div>
+      <Counter ref={counterRef} />
+      <button
+        className="m-4 border-2 p-2 rounded-full"
+        onClick={() => counterRef.current?.reset()}
+      >
+        Reset From Parent
       </button>
-      <p className="mt-3">{inputValueRef.current} </p>
     </div>
   );
-};
-
-export default Home;
+}
+export default Demo;
