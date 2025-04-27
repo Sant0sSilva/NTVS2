@@ -51,7 +51,6 @@ const Home = () => {
     if (isNodeError(catFactResponse)) {
       return;
     }
-    // await sleep(1000);
     setCatFact(catFactResponse.fact);
   };
 
@@ -78,7 +77,7 @@ const Home = () => {
       if (isNodeError(catImageResponse)) {
         return;
       }
-      await sleep(500);
+      // await sleep(500);
       setCatImages(catImageResponse);
       setIsLoading(false);
     };
