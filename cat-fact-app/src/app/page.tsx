@@ -93,7 +93,6 @@ const Home = () => {
         </div>
       ) : (
         <div className="flex flex-col sm:grid grid-cols-3">
-          {/* {isLoading && <div>...Loading</div>} */}
           {catImages.slice(0, 9).map((image, index) => (
             <div className=" w-[100px] h-[100px]  m-[8px] " key={image.id}>
               {clickIndex === index && (
@@ -104,7 +103,7 @@ const Home = () => {
                   className="p-2 flex  absolute w-[100px] h-[100px]  bg-black opacity-50 text-xs hover:cursor-pointer"
                 >
                   {!catFact ? (
-                    <p>loading...</p>
+                    <p>Loading...</p>
                   ) : (
                     <p className="break-words overflow-hidden italic">
                       {catFact}
