@@ -14,10 +14,6 @@ interface Cat {
   width: number;
 }
 
-const sleep = async (timeMS: number) => {
-  return new Promise((resolve) => setTimeout(resolve, timeMS));
-};
-
 const isNodeError = (data: unknown): data is NodeJS.ErrnoException => {
   if (data && typeof data === "object" && "message" in data && "name" in data) {
     return true;
@@ -72,12 +68,11 @@ const Home = () => {
       }
     };
 
-    const getCatImage = async () => {
+    const getCatImage = async (): Promise<Cat[] | undefined> => {
       const catImageResponse = await getCatImageData();
       if (isNodeError(catImageResponse)) {
         return;
       }
-      // await sleep(500);
       setCatImages(catImageResponse);
       setIsLoading(false);
     };
