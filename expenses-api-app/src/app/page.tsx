@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import AddExpenseCard from "./components/addExpense/AddExpenseCard";
 import ExpensesList from "./components/expensesList/ExpensesList";
 import type { Expense } from "@/app/types/ExpenseType";

@@ -14,7 +14,6 @@ const AddExpenseCard = ({ expenses, setExpenses }: AddExpenseCardProps) => {
   const postNewExpense = async (newExpense: New_Expense_Item) => {
     try {
       await api.createExpense(newExpense);
-      console.log("newExpense", newExpense);
       const updatedExpenses = await api.getExpenses();
       setExpenses(updatedExpenses);
     } catch (error: any) {
