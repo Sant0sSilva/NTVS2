@@ -35,7 +35,7 @@ const Home = () => {
         </div>
 
         <AddExpenseCard expenses={expenses} setExpenses={setExpenses} />
-        <ExpensesList expenses={expenses} />
+        <ExpensesList expenses={expenses} setExpenses={setExpenses} />
       </div>
     </div>
   );

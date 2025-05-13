@@ -37,7 +37,7 @@ const getExpenses = async () => {
 const deleteExpenseById = async (id: number) => {
   try {
     const response = await getResponse<Expense[]>(
-      `/api/expenses/${id}`,
+      `/api/expense/${id}`,
       "DELETE"
     );
     return response;

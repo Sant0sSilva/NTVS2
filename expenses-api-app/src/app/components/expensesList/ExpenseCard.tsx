@@ -4,13 +4,25 @@ import api from "@/app/api/api";
 
 type ExpenseCardProps = {
   expense: Expense;
+  setExpenses: React.Dispatch<React.SetStateAction<Expense[]>>;
 };
 
-const onRemoveExpense = async (id: number) => {
-  const response = await api.deleteExpenseById();
-};
+const ExpenseCard = ({ expense, setExpenses }: ExpenseCardProps) => {
+  const deleteExpense = async (id: number) => {
+    try {
+      await api.deleteExpenseById(id);
+      const updatedExpenses = await api.getExpenses();
+      setExpenses(updatedExpenses);
+    } catch (error: any) {
+      const nodeError: NodeJS.ErrnoException = error;
+      return nodeError;
+    }
+  };
 
-const ExpenseCard = ({ expense }: ExpenseCardProps) => {
+  const onRemoveExpense = (expense: Expense) => {
+    deleteExpense(expense.id);
+  };
+
   return (
     <div className="flex shadow-lg bg-white w-[325px] mx-10 p-3 justify-between text-xs rounded">
       <div className="flex items-center">
@@ -19,7 +31,7 @@ const ExpenseCard = ({ expense }: ExpenseCardProps) => {
         <p className="text-blue-600">${expense.cost}</p>
       </div>
       <button
-        onClick={onRemoveExpense}
+        onClick={() => onRemoveExpense(expense)}
         className="text-red-500 outline outline-red-600 rounded p-2 px-3 hover:cursor-pointer hover:bg-red-100"
       >
         Delete
