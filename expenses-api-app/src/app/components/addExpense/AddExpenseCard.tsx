@@ -70,24 +70,3 @@ const AddExpenseCard = ({ expenses, setExpenses }: AddExpenseCardProps) => {
 };
 
 export default AddExpenseCard;
-
-// const onSubmitPost = (e) => {
-//   const costNum = Number(cost);
-//   e.preventDefault();
-//   if (!name || !cost || isNaN(costNum)) {
-//     console.log("Error");
-//     return;
-//   } else {
-//     console.log("submission:", expenses);
-//     const newExpense = { id: expenses.length + 1, name, cost: costNum };
-
-//     fetch("http://localhost:3001/api/create-expense", {
-//       method: "POST",
-//       headers: { "content-type": "application/json" },
-//       body: JSON.stringify(newExpense),
-//     });
-//     setName("");
-//     setCost("");
-//     setExpenses((prev) => [...prev, newExpense]);
-//   }
-// };
