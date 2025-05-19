@@ -4,7 +4,6 @@ const characters = [
     name: "shrek",
     description: "A beautiful ugly ogre.",
     imgPath: "/images/shrek.png",
-    imScale: "scale-100",
   },
 
   {
@@ -12,14 +11,12 @@ const characters = [
     name: "fiona",
     description: "A beautiful ogre princess.",
     imgPath: "/images/fiona.png",
-    imScale: "scale-45",
   },
   {
     id: 3,
     name: "donkey",
     description: "Shrek's loyal friend who never shuts up.",
     imgPath: "/images/donkey.png",
-    imScale: "scale-50 border-",
   },
 ];
 

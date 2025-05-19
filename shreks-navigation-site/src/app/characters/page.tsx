@@ -41,7 +41,7 @@ const Characters = () => {
             >
               <div
                 key={char.id}
-                className="bg-green-200 h-180 rounded-md hover:outline-2 hover:outline-green-600 hover:cursor-pointer flex flex-col items-center p-6 justify-between"
+                className="bg-green-200 h-150 rounded-md hover:outline-2 hover:outline-green-600 hover:cursor-pointer flex flex-col items-center p-6 justify-between"
               >
                 <div className="">
                   <p className="text-4xl"> {char.name} </p>
@@ -51,7 +51,7 @@ const Characters = () => {
                   <img
                     src={char.imgPath}
                     alt={char.name}
-                    className={char.imScale}
+                    className={` h-100`}
                   />
                 </div>
               </div>
