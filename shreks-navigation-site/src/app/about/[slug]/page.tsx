@@ -37,7 +37,7 @@ const About = ({ params }: AboutProps) => {
     <div className="flex w-screen h-screen text-black justify-center items-center">
       <div className="flex w-1/2 bg-green-200 gap-5 p-3 rounded-md">
         <div className="flex  w-1/2">
-          <img src={character.imgPath} alt="" />
+          <img src={character.imgPath} alt={character.name} className="h-100" />
         </div>
         <div className=" flex flex-col  w-1/2 gap-2 p-2">
           <p>{character?.name[0].toUpperCase() + character?.name.slice(1)}</p>
