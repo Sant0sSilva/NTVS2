@@ -40,7 +40,9 @@ const About = ({ params }: AboutProps) => {
           <img src={character.imgPath} alt={character.name} className="h-100" />
         </div>
         <div className=" flex flex-col  w-1/2 gap-2 p-2">
-          <p>{character?.name[0].toUpperCase() + character?.name.slice(1)}</p>
+          <p className="text-3xl">
+            {character?.name[0].toUpperCase() + character?.name.slice(1)}
+          </p>
           <p>{character.description}</p>
         </div>
       </div>

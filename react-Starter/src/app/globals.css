@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+/*
+bitsGreen: #426256
+bitYellow #DFE695
+bitsRed #D46F5F
+*/
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@layer {
+  .btn {
+    @apply bg-bitsGreen-500 text-bitsYellow-500 rounded-md min-w-[7rem] pb-0.5 shadow shadow-bitsRed-500 font-semibold border-black border  hover:cursor-pointer hover:bg-bitsGreen-600 hover:text-bitsYellow-600;
+  }
+  .boxHeader {
+    @apply text-bitsRed-500  text-xl;
+  }
+  .boxParagraph {
+    @apply text-bitsRed-500 font-extralight;
+  }
+  .box {
+    @apply border border-bitsGreen-500 rounded min-w-max min-h-[200];
+    /* 
+    @apply shadow shadow-bitsGreen-500 rounded; */
+  }
+  .drinkBox {
+    @apply border border-bitsGreen-500 rounded min-w-max min-h-max w-[10rem] h-[10rem];
+  }
+  .foodBox {
+    @apply border border-bitsGreen-500 rounded min-w-max min-h-max w-[25rem] h-[10rem];
+  }
+
+  .emailInput {
+    @apply w-[12rem] outline outline-bitsGreen-500 rounded mt-1 px-2 pb-1 placeholder:font-light placeholder:text-sm align-middle text-bitsYellow-500 font-light focus:outline-bitsGreen-200 text-sm bg-bitsGreen-500/30;
+  }
+}
+
+@theme {
+  --color-bitsRed: oklch(65.432% 0.1302 30.326);
+  --color-bitsRed-50: oklch(96.566% 0.01089 24.32);
+  --color-bitsRed-100: oklch(93.109% 0.02239 27.815);
+  --color-bitsRed-200: oklch(85.917% 0.04678 29.665);
+  --color-bitsRed-300: oklch(78.83% 0.07272 29.478);
+  --color-bitsRed-400: oklch(72.028% 0.10155 29.665);
+  --color-bitsRed-500: oklch(65.432% 0.1302 30.326);
+  --color-bitsRed-600: oklch(57.288% 0.16359 31.538);
+  --color-bitsRed-700: oklch(47.859% 0.13329 31.677);
+  --color-bitsRed-800: oklch(37.631% 0.10096 31.315);
+  --color-bitsRed-900: oklch(27.029% 0.06575 31.543);
+  --color-bitsRed-950: oklch(21.398% 0.04589 30.004);
+
+  --color-bitsYellow: oklch(90.121% 0.10323 112.49);
+  --color-bitsYellow-50: oklch(100% 0 none);
+  --color-bitsYellow-100: oklch(100% 0 none);
+  --color-bitsYellow-200: oklch(99.267% 0.00657 106.52);
+  --color-bitsYellow-300: oklch(96.281% 0.04068 111.65);
+  --color-bitsYellow-400: oklch(93.165% 0.07275 111.95);
+  --color-bitsYellow-500: oklch(90.121% 0.10323 112.49);
+  --color-bitsYellow-600: oklch(86.056% 0.13967 113.45);
+  --color-bitsYellow-700: oklch(82.448% 0.16709 114.41);
+  --color-bitsYellow-800: oklch(70.641% 0.14644 114.48);
+  --color-bitsYellow-900: oklch(56.493% 0.115 114.34);
+  --color-bitsYellow-950: oklch(48.954% 0.09845 113.87);
+
+  --color-bitsGreen: oklch(46.741% 0.04233 169.11);
+  --color-bitsGreen-50: oklch(77.431% 0.03856 170.56);
+  --color-bitsGreen-100: oklch(74.344% 0.04231 170.53);
+  --color-bitsGreen-200: oklch(68.533% 0.05316 170.26);
+  --color-bitsGreen-300: oklch(62.342% 0.05886 168.96);
+  --color-bitsGreen-400: oklch(54.51% 0.05079 169.01);
+  --color-bitsGreen-500: oklch(46.741% 0.04233 169.11);
+  --color-bitsGreen-600: oklch(35.134% 0.0293 171.86);
+  --color-bitsGreen-700: oklch(22.806% 0.01633 168.38);
+  --color-bitsGreen-800: oklch(0% 0 none);
+  --color-bitsGreen-900: oklch(0% 0 none);
+  --color-bitsGreen-950: oklch(0% 0 none);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.spin {
+  animation: var(--animate-spin); /* spin 1s linear infinite */
+  animation-duration: 10s;
+}
+
+.bounce {
+  animation: var(--animate-bounce); /* bounce 1s infinite */
+  animation-duration: 10s;
+}
+
+.fade {
+  animation: var(--animate-fade); /* bounce 1s infinite */
+  animation-duration: 10s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadein {
+  animation: 600ms ease 0s normal forwards 1 fadein;
+  opacity: 0;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeout {
+  animation: 600ms ease 0s normal forwards 1 fadeout;
+  opacity: 1;
+}
