@@ -10,31 +10,50 @@ bitsRed #D46F5F
   --background: #ffffff;
   --foreground: #171717;
 }
-
 @layer {
+  /* BUTTONS */
   .btn {
     @apply bg-bitsGreen-500 text-bitsYellow-500 rounded-md min-w-[7rem] pb-0.5 shadow shadow-bitsRed-500 font-semibold border-black border  hover:cursor-pointer hover:bg-bitsGreen-600 hover:text-bitsYellow-600;
   }
+  /* FONTS */
   .boxHeader {
     @apply text-bitsRed-500  text-xl;
   }
   .boxParagraph {
-    @apply text-bitsRed-500 font-extralight;
+    @apply text-bitsYellow-500 font-extralight;
+    /* Maybe change back to bitsRed */
   }
-  .box {
-    @apply border border-bitsGreen-500 rounded min-w-max min-h-[200];
-    /* 
-    @apply shadow shadow-bitsGreen-500 rounded; */
-  }
-  .drinkBox {
-    @apply border border-bitsGreen-500 rounded min-w-max min-h-max w-[10rem] h-[10rem];
-  }
-  .foodBox {
-    @apply border border-bitsGreen-500 rounded min-w-max min-h-max w-[25rem] h-[10rem];
+  /* PAGE CONTAINERS */
+  .pageContainer {
+    @apply flex flex-col md:h-screen md:w-screen items-center;
+    /* @apply flex justify-center; */
   }
 
+  /* BOX CONTAINERS */
+  .box {
+    @apply border border-bitsRed-500 rounded min-w-max min-h-[200];
+  }
+  .drinkBox {
+    @apply border border-bitsRed-500 rounded-t-md min-w-max min-h-max w-[10rem] h-[10rem];
+  }
+
+  .drinkInfoBox {
+    @apply flex my-0.5 border border-bitsRed-500 bg-bitsGreen-500/50 rounded-b-md px-4 justify-between w-full;
+  }
+
+  .cartBox {
+    @apply border border-bitsRed-500 rounded min-w-max min-h-max w-[10rem] h-[10rem];
+  }
+
+  .foodBox {
+    @apply border  border-bitsRed-500 rounded min-w-max min-h-max w-[25rem] h-[10rem];
+  }
+  /* INPUTS */
   .emailInput {
     @apply w-[12rem] outline outline-bitsGreen-500 rounded mt-1 px-2 pb-1 placeholder:font-light placeholder:text-sm align-middle text-bitsYellow-500 font-light focus:outline-bitsGreen-200 text-sm bg-bitsGreen-500/30;
+  }
+  .searchInput {
+    @apply w-[12rem] outline outline-bitsGreen-500 rounded-2xl mt-1 px-2 pb-1 placeholder:font-light placeholder:text-sm align-middle text-bitsYellow-500 font-light focus:outline-bitsGreen-200 text-sm bg-bitsGreen-500/30;
   }
 }
 

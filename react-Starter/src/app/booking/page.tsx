@@ -1,6 +1,6 @@
 const BookingPage = () => {
   return (
-    <div className=" flex justify-center">
+    <div className="pageContainer">
       <div className="box w-[500px] flex ">
         {/* Pick a date box */}
         <div className="flex flex-col w-2/5 gap-2 p-2">

@@ -51,3 +51,28 @@ const Home = () => {
 };
 
 export default Home;
+
+/*
+
+API fyrir drykkina:
+
+https://www.thecocktaildb.com/api.php
+
+Search cocktail by name
+www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
+
+Search ingredient by name
+www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
+
+List all cocktails by first letter
+www.thecocktaildb.com/api/json/v1/1/search.php?f=a
+ 
+API for the food:
+
+https://themealdb.com/api/json/v1/1/random.php
+
+Lookup full meal details by id
+www.themealdb.com/api/json/v1/1/lookup.php?i=52772
+
+
+*/

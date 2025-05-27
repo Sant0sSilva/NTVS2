@@ -1,6 +1,9 @@
+import CartBox from "../components/cart/cartBox";
+
 const FoodPage = () => {
   return (
-    <div className="flex gap-2 justify-center ">
+    // Remember to fix responsiveness here
+    <div className=" flex md:flex-row flex-col gap-2 justify-center flex-wrap">
       {/* Search and drinks menu box */}
       <div className="flex flex-col gap-2">
         <p className="boxParagraph">Menu</p>
@@ -15,12 +18,10 @@ const FoodPage = () => {
       </div>
       {/* Cart box */}
       <div className="flex flex-col">
-        <p className="boxParagraph">Cart</p>
+        <p className="boxParagraph w-full">Cart</p>
         {/* this div below is to line up the cart with the drinks containers */}
         <div className="h-[7px]"></div>
-        <div className="drinkBox">
-          <p>hello</p>
-        </div>
+        <CartBox />
       </div>
     </div>
   );
