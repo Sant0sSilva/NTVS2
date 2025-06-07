@@ -10,6 +10,7 @@ const CartBox = () => {
           <p>2</p>
           <p>4</p>
           <p>3</p>
+          <p>3</p>
         </div>
         <p className="boxParagraph">Item</p>
         <p className="boxParagraph">Price</p>

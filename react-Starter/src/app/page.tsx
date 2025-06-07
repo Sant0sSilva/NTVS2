@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const Home = () => {
   return (
     <div className="flex flex-col md:h-screen md:w-screen items-center">
@@ -10,13 +12,15 @@ const Home = () => {
           <img
             src="/images/lil-bits-outside.webp"
             alt=""
-            className="object-cover h-50 w-full rounded-xs"
+            className="object-fill h-50 w-full rounded-xs"
           />
         </div>
         {/* START YOUR ORDER BOX */}
         <div className="box flex flex-col justify-center items-center md:gap-8  md:col-span-3  ">
           <p className="boxHeader">Start your order!</p>
-          <button className="btn ">Order</button>
+          <Link href={"/drinks"}>
+            <button className="btn">Order</button>
+          </Link>
         </div>
         {/* FIND YOUR ORDER BOX */}
         <div className="box md:col-span-6 flex flex-col">

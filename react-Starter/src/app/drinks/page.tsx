@@ -1,5 +1,6 @@
-import CartBox from "../components/cart/cartBox";
-import DrinksList from "../components/drinksList/DrinksList";
+import CartBox from "../../components/cart/cartBox";
+import DrinksList from "../../components/drinksList/DrinksList";
+import Link from "next/link";
 
 const DrinksPage = () => {
   return (
@@ -21,6 +22,14 @@ const DrinksPage = () => {
         {/* this div below is to line up the cart with the drinks containers */}
         <div className="h-[12px]"></div>
         <CartBox />
+        <div className="flex gap-2 justify-between mt-2">
+          <Link href={"/"}>
+            <button className="btn">Back</button>
+          </Link>
+          <Link href={"/food"}>
+            <button className="btn">Continue</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

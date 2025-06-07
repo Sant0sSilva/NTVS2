@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ReceiptPage = () => {
   return (
     <div className="pageContainer gap-2">
@@ -12,9 +14,11 @@ const ReceiptPage = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="flex justify-between w-2/6">
-        <button className="btn">Back to Home</button>
+        <Link href={"/"}>
+          <button className="btn">Back to Home</button>
+        </Link>
         <button className="btn ">Pay</button>
       </div>
     </div>

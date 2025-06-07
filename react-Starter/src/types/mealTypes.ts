@@ -1,6 +1,6 @@
-export type meal = {
+export type Meal = {
   idMeal: number;
   strMeal: string;
   strMealThumb: string;
-  strIngredient1: string;
+  [Key: string]: any;
 };
