@@ -1,19 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import { useOrderStore } from "@/store/orderStore";
 
 type DropdownItemProps = {
+  setToggleDropdown: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedTime: string;
+  // setSelectedTime: React.Dispatch<React.SetStateAction<string>>;
   time: string;
 };
 
 const DropdownItem = (props: DropdownItemProps) => {
-  const [time, setTime] = useState<string>("");
-
+  const setSelectedTime = useOrderStore((state) => state.setSelectedTime);
   return (
     <div
       onClick={() => {
-        setTime(props.time);
-        console.log(time);
+        setSelectedTime(props.time);
+        props.setToggleDropdown((prev) => !prev);
       }}
       className="hover:cursor-pointer hover:bg-bitsGreen-300 rounded-xl duration-300 px-2 py-1"
     >

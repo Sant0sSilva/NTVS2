@@ -1,16 +1,18 @@
 "use client";
 
+import { useOrderStore } from "@/store/orderStore";
 import DropdownButton from "./dropdownButton/DropdownButton";
 import DropdownContent from "./droppdownContent/DropdownContent";
 import React, { useState } from "react";
 
 type TimeDropdownProps = {
   buttonText: string;
-  content: React.ReactNode;
 };
 
 export const TimeDropdown = (props: TimeDropdownProps) => {
   const [toggleDropDown, setToggleDropDown] = useState<boolean>(false);
+  // const [selectedTime, setSelectedTime] = useState<string>("");
+
   return (
     <div className="flex-col relative boxParagraph w-full">
       <div>
@@ -25,7 +27,6 @@ export const TimeDropdown = (props: TimeDropdownProps) => {
         <DropdownContent
           toggleDropdown={toggleDropDown}
           setToggleDropdown={setToggleDropDown}
-          content={props.content}
         />
         {/* )} */}
       </div>

@@ -1,14 +1,49 @@
 "use client";
-import Link from "next/link";
-import { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { TimeDropdown } from "@/components/Timedropdown/Dropdown";
-import { generateTimes } from "@/utilities/timeUtilities";
-import DropdownItem from "@/components/Timedropdown/dropdownItem/DropdownItem";
 import GuestSelector from "@/components/guestSelector/GuestSelector";
+import { useOrderStore } from "@/store/orderStore";
+import { ChangeEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const BookingPage = () => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [invalidEmailMessage, setInvalidEmailMessage] =
+    useState<boolean>(false);
+
+  const [emailInput, setEmailInput] = useState<string>("");
+  const router = useRouter();
+
+  const setSelectedDate = useOrderStore((state) => state.setSelectedDate);
+  const selectedDate = useOrderStore((state) => state.order.date);
+  const setEmail = useOrderStore((state) => state.setEmail);
+
+  const onEmailInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmailInput(e.target.value);
+  };
+
+  const validateEmail = (email: string): boolean => {
+    const regEXP = /^[a-zA-Z0-9._]+@[a-z]+\.[a-z]{2,6}$/;
+
+    const isEmpty = email.trim() === "";
+    const isValid = regEXP.test(email);
+
+    if (isEmpty || !isValid) {
+      setInvalidEmailMessage(true);
+      return false;
+    }
+
+    setEmail(email);
+    setInvalidEmailMessage(false);
+    return true;
+  };
+
+  const handleSubmit = () => {
+    const isValid = validateEmail(emailInput);
+
+    if (isValid) {
+      router.push("/receipt");
+    }
+  };
 
   return (
     <div className="pageContainer">
@@ -20,28 +55,27 @@ const BookingPage = () => {
             <Calendar
               disabled={[{ before: new Date() }, { dayOfWeek: [0, 6] }]}
               mode="single"
-              selected={date}
-              onSelect={setDate}
-              className="rounded-xs border border-bitsRed-500/50"
+              selected={selectedDate}
+              onSelect={setSelectedDate}
+              className="rounded-xs border border-bitsGreen-500 text-bitsYellow-500"
             />
 
-            <TimeDropdown
-              buttonText="Select Time"
-              content={generateTimes(15).map((time, index) => {
-                return <DropdownItem key={index} time={time} />;
-              })}
-            />
+            <TimeDropdown buttonText="Select Time" />
           </div>
           <p></p>
         </div>
         {/* Guest box */}
-        <div className="flex flex-col items-center justify-end gap-2 md:gap-30">
+        <div className="flex flex-col items-center justify-end gap-2 md:gap-30 border-2">
           <GuestSelector />
+
           {/* Email submission box */}
           <div className="flex gap-2 items-end">
             <div>
               <label htmlFor="emailInput" className="boxParagraph">
                 Enter Email
+                {invalidEmailMessage && (
+                  <span className=" text-red-500 mx-2">Email is invaid</span>
+                )}
               </label>
               <br />
               <input
@@ -49,11 +83,12 @@ const BookingPage = () => {
                 type="text"
                 placeholder="email@email.com"
                 className="emailInput"
+                onChange={onEmailInput}
               />
             </div>
-            <Link href={"/receipt"}>
-              <button className="btn h-1/2">Submit</button>
-            </Link>
+            <button onClick={handleSubmit} className="btn h-1/2">
+              Submit
+            </button>
           </div>
         </div>
       </div>

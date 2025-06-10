@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import { useOrderStore } from "@/store/orderStore";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 type DropdownButtonProps = {
@@ -10,6 +10,8 @@ type DropdownButtonProps = {
 };
 
 const DropdownButton = (props: DropdownButtonProps) => {
+  const selectedTime = useOrderStore((state) => state.order.time);
+
   return (
     <div
       onClick={() => {
@@ -22,7 +24,7 @@ const DropdownButton = (props: DropdownButtonProps) => {
     >
       {props.buttonText}
 
-      <p>16:00</p>
+      <p>{selectedTime}</p>
       {props.toggleDropdown ? <FaChevronUp /> : <FaChevronDown />}
     </div>
   );

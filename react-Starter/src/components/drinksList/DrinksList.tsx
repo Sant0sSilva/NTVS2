@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import DrinkItem from "./DrinkItem";
-import type { Drink } from "@/types/drinkTypes";
+import type { APIDrink } from "@/types/drinkTypes";
 import { isNodeError } from "@/utilities/errorUtilities";
 import { api } from "@/api/api";
 
 const DrinksList = () => {
-  const [drinks, setDrinks] = useState<Drink[]>([]);
+  const [drinks, setDrinks] = useState<APIDrink[]>([]);
 
   useEffect(() => {
     const getDrinksData = async () => {
@@ -40,7 +40,7 @@ const DrinksList = () => {
   return (
     <div className="grid grid-cols-3 gap-2 ">
       {drinks.map((drink, index) => {
-        return <DrinkItem key={drink.idDrink} Drink={drink} index={index} />;
+        return <DrinkItem key={drink.idDrink} drink={drink} index={index} />;
       })}
     </div>
   );

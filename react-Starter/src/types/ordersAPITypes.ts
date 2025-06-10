@@ -1,25 +1,17 @@
-export type Provision = {
-  id: string;
-  name: string;
-  description: string;
-  imageSource: string;
-  price: number;
-  category: string;
-};
-
-export type Dish = Provision & {
-  cousine: string;
-};
-
-export type Drink = Provision & {
-  brewer: string;
-};
+import { Meal } from "@/types/mealTypes";
+import { Drink } from "@/types/drinkTypes";
 
 export type Order = {
   id: number;
   email: string;
-  dish: Dish;
+  meal: Meal;
   drinks: Drink[];
-  count: number;
+  guests: number;
   date: Date;
+  time: string;
+};
+
+export type OrderResponse = {
+  success: true;
+  response: Order;
 };

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const DrinksPage = () => {
   return (
-    <div className="flex justify-center md:h-screen md:w-screen  gap-2">
+    <div className="flex justify-center md:h-screen md:w-screen gap-2">
       {/* Search and drinks menu box */}
       <div className="flex flex-col gap-2">
         <div className="flex gap-2">

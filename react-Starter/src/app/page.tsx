@@ -1,8 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { useOrderStore } from "@/store/orderStore";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [email, setEmail] = useState<string>("");
+  const getOrder = useOrderStore((state) => state.getOrder);
+  const order = useOrderStore((state) => state.order);
+
+  const handleEmailSubmit = async () => {
+    await getOrder(email);
+  };
+  useEffect(() => {
+    console.log("Here>>", order);
+  }, [order]);
   return (
     <div className="flex flex-col md:h-screen md:w-screen items-center">
       {/* BODY CONTAINER */}
@@ -38,9 +50,14 @@ const Home = () => {
                 type="text"
                 placeholder="email@email.com"
                 className="emailInput"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
               />
             </div>
-            <button className="btn m-2">Find</button>
+            <button onClick={handleEmailSubmit} className="btn m-2">
+              Find
+            </button>
           </div>
         </div>
         {/* OPENING HOURS BOX */}
@@ -55,28 +72,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-
-API fyrir drykkina:
-
-https://www.thecocktaildb.com/api.php
-
-Search cocktail by name
-www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita
-
-Search ingredient by name
-www.thecocktaildb.com/api/json/v1/1/search.php?i=vodka
-
-List all cocktails by first letter
-www.thecocktaildb.com/api/json/v1/1/search.php?f=a
- 
-API for the food:
-
-https://themealdb.com/api/json/v1/1/random.php
-
-Lookup full meal details by id
-www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-
-
-*/

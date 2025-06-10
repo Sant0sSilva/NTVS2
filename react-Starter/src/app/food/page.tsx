@@ -8,10 +8,19 @@ import Link from "next/link";
 import IngredientBox from "@/components/food/IngredientsBox";
 import { api } from "@/api/api";
 import FoodImage from "@/components/food/FoodImage";
+import { useOrderStore } from "@/store/orderStore";
 
 const FoodPage = () => {
-  const [meal, setMeal] = useState<Meal[]>([]);
+  const [meal, setMeal] = useState<Meal | null>(null);
   const [generateNew, setGenerateNew] = useState<boolean>(false);
+
+  const newMeal = useOrderStore((state) => state.setMeal);
+
+  const onNewMeal = () => {
+    if (meal != null) {
+      newMeal(meal);
+    }
+  };
 
   useEffect(() => {
     const getMealData = async () => {
@@ -24,9 +33,9 @@ const FoodPage = () => {
     getMealData();
   }, [generateNew]);
 
-  if (meal.length < 1) {
+  if (!meal) {
     return (
-      <div>
+      <div className="flex justify-center">
         <p>Loading</p>
       </div>
     );
@@ -50,7 +59,12 @@ const FoodPage = () => {
           >
             Generate New
           </button>
-          <button className="btn px-2 flex items-center justify-center">
+          <button
+            onClick={() => {
+              onNewMeal();
+            }}
+            className="btn px-2 flex items-center justify-center"
+          >
             Add to Cart
           </button>
         </div>

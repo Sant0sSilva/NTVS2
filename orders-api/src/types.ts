@@ -1,25 +1,23 @@
-export type Provision = {
-	id: string;
-	name: string;
-	description: string;
-	imageSource: string;
-	price: number;
-	category: string;
+export type Meal = {
+  idMeal: number;
+  strMeal: string;
+  strMealThumb: string;
 };
 
-export type Dish = Provision & {
-	cousine: string;
-};
-
-export type Drink = Provision & {
-	brewer: string;
+export type Drink = {
+  idDrink: number;
+  strDrink: string;
+  strDrinkThumb: string;
+  quantity: number;
+  price: number;
 };
 
 export type Order = {
-	id: number;
-	email: string;
-	dish: Dish;
-	drinks: Drink[];
-	count: number;
-	date: Date;
+  id: number;
+  email: string;
+  meal: Meal;
+  drinks: Drink[];
+  guests: number;
+  date: Date;
+  time: string;
 };
