@@ -38,9 +38,11 @@ const DrinksList = () => {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-2 ">
-      {drinks.map((drink, index) => {
-        return <DrinkItem key={drink.idDrink} drink={drink} index={index} />;
+    <div className=" grid grid-cols-2 md:grid-cols-3 gap-2 ">
+      {drinks.map((drink) => {
+        return (
+          <DrinkItem key={drink.idDrink} drink={drink} index={drink.idDrink} />
+        );
       })}
     </div>
   );

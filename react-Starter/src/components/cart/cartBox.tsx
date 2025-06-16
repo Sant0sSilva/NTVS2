@@ -8,8 +8,8 @@ const CartBox = () => {
 
   return (
     <div className="cartBox flex flex-col items-center boxParagraph p-3">
-      {!drinks ? (
-        <div>Fill the void...</div>
+      {!drinks || drinks.length === 0 ? (
+        <div className="italic">Pick a drink... Fill the void...</div>
       ) : (
         <div className="flex justify-evenly w-full">
           <div className=" flex flex-col">

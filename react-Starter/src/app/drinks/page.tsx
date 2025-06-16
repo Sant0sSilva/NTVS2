@@ -1,10 +1,25 @@
+"use client";
+
+import { useOrderStore } from "@/store/orderStore";
 import CartBox from "../../components/cart/cartBox";
 import DrinksList from "../../components/drinksList/DrinksList";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const DrinksPage = () => {
+  const router = useRouter();
+  const drinks = useOrderStore((state) => state.order.drinks);
+
+  const handleContinue = () => {
+    if (!drinks || drinks.length === 0) {
+      return;
+    } else {
+      router.push("/food");
+    }
+  };
+
   return (
-    <div className="flex justify-center md:h-screen md:w-screen gap-2">
+    <div className="flex flex-col md:flex-row justify-center w-[10rem] md:h-screen md:w-screen gap-2 justify-center">
       {/* Search and drinks menu box */}
       <div className="flex flex-col gap-2">
         <div className="flex gap-2">
@@ -27,9 +42,10 @@ const DrinksPage = () => {
           <Link href={"/"}>
             <button className="btn">Back</button>
           </Link>
-          <Link href={"/food"}>
-            <button className="btn">Continue</button>
-          </Link>
+
+          <button className="btn" onClick={handleContinue}>
+            Continue
+          </button>
         </div>
       </div>
     </div>

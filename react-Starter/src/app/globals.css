@@ -44,7 +44,7 @@ bitsRed #D46F5F
   }
 
   .drinkInfoBox {
-    @apply flex my-0.5 border border-bitsRed-500 bg-bitsGreen-500/50 rounded-b-md px-4 justify-between w-full;
+    @apply flex my-0.5 border border-bitsRed-500 bg-bitsGreen-500/50 rounded-b-md px-4 justify-between;
   }
 
   .cartBox {

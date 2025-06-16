@@ -6,8 +6,8 @@ const NavBar = () => {
   const pathname = usePathname();
 
   return (
-    <div>
-      <div className="text-black flex w-3/5 justify-self-center justify-center mt-5 mb-10">
+    <div className="flex justify-center">
+      <div className="text-black flex flex-col md:flex-row w-3/5 justify-self-center justify-center mt-5 mb-10 gap-2">
         <div>
           <img
             src="/images/lilbits.png"
@@ -16,7 +16,7 @@ const NavBar = () => {
           />
         </div>
 
-        <ol className="flex items-end justify-between w-3/5 px-2 text-xl text-bitsRed-500">
+        <ol className="flex gap-2 items-end justify-between w-3/5 px-2 text-xl text-bitsRed-500">
           <li
             className={`${
               pathname === "/"

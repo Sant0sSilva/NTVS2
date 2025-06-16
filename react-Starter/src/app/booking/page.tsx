@@ -109,16 +109,6 @@ const BookingPage = () => {
           </div>
         </div>
       </div>
-      <div>
-        <p
-          className="text-center"
-          onClick={() => {
-            router.push("/receipt");
-          }}
-        >
-          hello
-        </p>
-      </div>
     </>
   );
 };

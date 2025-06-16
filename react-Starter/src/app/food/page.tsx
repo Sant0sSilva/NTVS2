@@ -9,12 +9,23 @@ import IngredientBox from "@/components/food/IngredientsBox";
 import { api } from "@/api/api";
 import FoodImage from "@/components/food/FoodImage";
 import { useOrderStore } from "@/store/orderStore";
+import { useRouter } from "next/navigation";
 
 const FoodPage = () => {
   const [meal, setMeal] = useState<Meal | null>(null);
   const [generateNew, setGenerateNew] = useState<boolean>(false);
+  const router = useRouter();
 
   const newMeal = useOrderStore((state) => state.setMeal);
+  const mealOrder = useOrderStore((state) => state.order.meal);
+
+  const handleContinue = () => {
+    if (!mealOrder || mealOrder.idMeal === 0) {
+      return;
+    } else {
+      router.push("/booking");
+    }
+  };
 
   const onNewMeal = () => {
     if (meal != null) {
@@ -42,8 +53,7 @@ const FoodPage = () => {
   }
 
   return (
-    // Remember to fix responsiveness here
-    <div className=" flex md:flex-row flex-col gap-2 justify-center flex-wrap">
+    <div className=" flex md:flex-row flex-col gap-2 justify-center flex-wrap ">
       {/* Search and drinks menu box */}
       <div className="flex flex-col gap-2">
         <p className="boxParagraph">Menu</p>
@@ -79,9 +89,9 @@ const FoodPage = () => {
           <Link href={"/drinks"}>
             <button className="btn">Back</button>
           </Link>
-          <Link href={"/booking"}>
-            <button className="btn">Continue</button>
-          </Link>
+          <button className="btn" onClick={handleContinue}>
+            Continue
+          </button>
         </div>
       </div>
     </div>

@@ -15,6 +15,9 @@ const DrinkItem = (props: DrinkItemProps) => {
 
   const addDrink = useOrderStore((state) => state.addDrink);
   const removeDrink = useOrderStore((state) => state.removeDrink);
+  const drinks = useOrderStore((state) => state.order.drinks);
+
+  const drinksID: number[] = drinks.map((drink) => drink.idDrink);
 
   const onAddDrink = () => {
     addDrink(props.drink as Drink, drinkQuantity);
@@ -30,7 +33,7 @@ const DrinkItem = (props: DrinkItemProps) => {
     <div>
       <div className="drinkBox flex flex-col boxParagraph items-center justify-end hover:cursor-pointer">
         {clickIndex === props.drink.idDrink && (
-          <div className=" flex flex-col justify-end absolute w-[10rem] h-[10rem]  bg-black/70 hover:cursor-pointer  items-center rounded-t-md">
+          <div className="flex flex-col justify-end absolute w-[10rem] h-[10rem]  bg-black/70 hover:cursor-pointer  items-center rounded-t-md">
             <img
               className="object-cover h-2/3 w-2/3 p-8"
               src="images/red-check-mark.png"
@@ -58,7 +61,7 @@ const DrinkItem = (props: DrinkItemProps) => {
           }}
           src={`${props.drink.strDrinkThumb}`}
           alt={props.drink.strDrink}
-          className="rounded-t-md"
+          className="rounded-t-md "
         />
       </div>
       {clickIndex === props.drink.idDrink && (
@@ -71,7 +74,7 @@ const DrinkItem = (props: DrinkItemProps) => {
           {drinkAdded ? "Drink added!" : "Add Drink"}
         </div>
       )}
-      <div className="drinkInfoBox boxParagraph ">
+      <div className="drinkInfoBox boxParagraph">
         <p>{props.drink.strDrink}</p>
         <p>$9.90</p>
       </div>
