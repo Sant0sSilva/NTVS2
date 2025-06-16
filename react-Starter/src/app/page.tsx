@@ -30,7 +30,7 @@ const Home = () => {
     const isValid = validate(email);
 
     if (!isValid) {
-      console.log("invalid email");
+      return;
     } else {
       const fetchedOrder = await getOrder(email);
       if (fetchedOrder) {
@@ -75,7 +75,10 @@ const Home = () => {
             <div className=" w-4/5 m-2">
               <label htmlFor="emailInput" className="boxParagraph">
                 Enter Email
-              </label>
+              </label>{" "}
+              {isInValid && (
+                <span className=" text-red-500 mx-2">Email is invaid</span>
+              )}
               <br />
               <input
                 id="emailInput"
