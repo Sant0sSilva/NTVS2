@@ -33,7 +33,7 @@ const DrinkItem = (props: DrinkItemProps) => {
     <div>
       <div className="drinkBox flex flex-col boxParagraph items-center justify-end hover:cursor-pointer">
         {clickIndex === props.drink.idDrink && (
-          <div className="flex flex-col justify-end absolute w-[10rem] h-[10rem]  bg-black/70 hover:cursor-pointer  items-center rounded-t-md">
+          <div className="flex flex-col justify-end absolute w-[10rem] h-[10rem]  bg-black/70 hover:cursor-pointer  items-center rounded-t-md ">
             <img
               className="object-cover h-2/3 w-2/3 p-8"
               src="images/red-check-mark.png"
