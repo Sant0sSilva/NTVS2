@@ -55,12 +55,12 @@ const FoodPage = () => {
   return (
     <div className=" flex md:flex-row flex-col gap-2 justify-center flex-wrap ">
       {/* Search and drinks menu box */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 items-center md:items-stretch">
         <p className="boxParagraph">Menu</p>
         <FoodImage meal={meal[0]} />
         <p className="boxParagraph">{`${meal[0].strMeal}`}</p>
         <IngredientBox meal={meal[0]} />
-        <div className="flex justify-between">
+        <div className="flex gap-50 md:justify-between">
           <button
             className="btn px-2 flex items-center justify-center"
             onClick={() => {
@@ -80,10 +80,10 @@ const FoodPage = () => {
         </div>
       </div>
       {/* Cart box */}
-      <div className="flex flex-col">
-        <p className="boxParagraph w-full">Cart</p>
+      <div className="flex flex-col items-center">
+        <p className="boxParagraph w-full text-center">Cart</p>
         {/* this div below is to line up the cart with the drinks containers */}
-        <div className="h-[7px]"></div>
+        <div className="h-[7px] r"></div>
         <CartBox />
         <div className="flex gap-2 justify-between mt-2">
           <Link href={"/drinks"}>

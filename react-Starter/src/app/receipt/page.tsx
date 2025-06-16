@@ -8,9 +8,8 @@ const ReceiptPage = () => {
   return (
     <div className="pageContainer gap-2 py-4">
       <div className="box flex flex-col w-2/6">
-        {}
         <h1 className="boxHeader m-5">Receipt</h1>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center p-4">
           <ReceiptHeader />
           <ReceiptList />
         </div>
