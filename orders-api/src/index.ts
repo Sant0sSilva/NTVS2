@@ -26,7 +26,7 @@ let orders: Order[] = [
       },
     ],
     guests: 10,
-    date: new Date(),
+    date: new Date("2025-06-15"),
     time: "18:10",
   },
 ];
@@ -47,12 +47,12 @@ api.get("/api/orders", (_, res) => {
 // Validation function for order - note that the object validation might not be entirely accurate and might need some modification
 const isOrder = (body: Order | Record<string, unknown>): body is Order => {
   if (
-    "name" in body &&
-    typeof body.name === "string" &&
-    "email" in body &&
     typeof body.email === "string" &&
-    "dish" in body &&
-    typeof body.dish === "object"
+    typeof body.meal === "object" &&
+    typeof body.guests === "number" &&
+    Array.isArray(body.drinks) &&
+    typeof body.date !== "undefined" &&
+    typeof body.time === "string"
   ) {
     return true;
   }

@@ -16,6 +16,9 @@ bitsRed #D46F5F
     @apply bg-bitsGreen-500 text-bitsYellow-500 rounded-md min-w-[7rem] pb-0.5 shadow shadow-bitsRed-500 font-semibold border-black border  hover:cursor-pointer hover:bg-bitsGreen-600 hover:text-bitsYellow-600;
   }
   /* FONTS */
+  .cartBoxFont {
+    @apply text-xl font-semibold;
+  }
   .boxHeader {
     @apply text-bitsRed-500  text-xl;
   }
@@ -30,6 +33,9 @@ bitsRed #D46F5F
   }
 
   /* BOX CONTAINERS */
+  .itemBox {
+    @apply w-[8rem] items-start;
+  }
   .box {
     @apply border border-bitsRed-500 rounded min-w-max min-h-[200];
   }

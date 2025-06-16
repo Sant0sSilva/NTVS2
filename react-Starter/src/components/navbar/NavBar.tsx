@@ -1,4 +1,10 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+
 const NavBar = () => {
+  const pathname = usePathname();
+
   return (
     <div>
       <div className="text-black flex w-3/5 justify-self-center justify-center mt-5 mb-10">
@@ -11,13 +17,51 @@ const NavBar = () => {
         </div>
 
         <ol className="flex items-end justify-between w-3/5 px-2 text-xl text-bitsRed-500">
-          <li className="bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110">
+          <li
+            className={`${
+              pathname === "/"
+                ? "bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110"
+                : ""
+            }`}
+          >
             Home
           </li>
-          <li>Drinks</li>
-          <li>Food</li>
-          <li>Booking</li>
-          <li>Receipt</li>
+          <li
+            className={`${
+              pathname === "/drinks"
+                ? "bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110"
+                : ""
+            }`}
+          >
+            Drinks
+          </li>
+          <li
+            className={`${
+              pathname === "/food"
+                ? "bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110"
+                : ""
+            }`}
+          >
+            Food
+          </li>
+          <li
+            className={`${
+              pathname === "/booking"
+                ? "bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110"
+                : ""
+            }`}
+          >
+            Booking
+          </li>
+          <li
+            className={`${
+              pathname === "/receipt"
+                ? "bg-bitsRed-500/35 px-2 py-1 rounded-md rounded-r-4xl scale-110"
+                : ""
+            }`}
+          >
+            Receipt
+          </li>
         </ol>
       </div>
     </div>

@@ -2,11 +2,10 @@ import { create } from "zustand";
 import type { Order } from "@/types/ordersAPITypes";
 import type { Drink } from "@/types/drinkTypes";
 import type { Meal } from "@/types/mealTypes";
-import { api } from "@/api/api";
-import { isNodeError } from "@/utilities/errorUtilities";
 
 type OrderStore = {
   order: Order;
+  setOrder: (newOrder: Order) => void;
   setSelectedDate: (date: Date | undefined) => void;
   setSelectedTime: (time: string) => void;
   guestDecrement: () => void;
@@ -15,7 +14,6 @@ type OrderStore = {
   addDrink: (drink: Drink, quantity: number) => void;
   removeDrink: (idDrink: number) => void;
   setEmail: (email: string) => void;
-  getOrder: (email: string) => void;
 };
 
 export const useOrderStore = create<OrderStore>((set) => ({
@@ -23,12 +21,17 @@ export const useOrderStore = create<OrderStore>((set) => ({
     id: 0,
     email: "",
     meal: { idMeal: 0, strMeal: "", strMealThumb: "" },
-    drinks: [
-      { idDrink: 0, strDrink: "", strDrinkThumb: "", quantity: 0, price: 9.99 },
-    ],
+    drinks: [],
     guests: 1,
     date: new Date(),
     time: "16:00",
+  },
+  setOrder: (newOrder) => {
+    set(() => ({
+      order: {
+        ...newOrder,
+      },
+    }));
   },
   setSelectedDate: (date) => {
     if (date === undefined) {
@@ -119,14 +122,5 @@ export const useOrderStore = create<OrderStore>((set) => ({
       },
     }));
   },
-  getOrder: async (email) => {
-    const encodedEmail = encodeURIComponent(email);
-    const orderDataResponse = await api.getOrderAPI(encodedEmail);
-    if (isNodeError(orderDataResponse)) {
-      return;
-    }
-    set((state) => ({
-      order: orderDataResponse,
-    }));
-  },
+  //move
 }));

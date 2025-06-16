@@ -21,6 +21,7 @@ const DrinksPage = () => {
         <p className="boxParagraph">Cart</p>
         {/* this div below is to line up the cart with the drinks containers */}
         <div className="h-[12px]"></div>
+
         <CartBox />
         <div className="flex gap-2 justify-between mt-2">
           <Link href={"/"}>

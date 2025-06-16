@@ -11,7 +11,12 @@ export type Order = {
   time: string;
 };
 
-export type OrderResponse = {
-  success: true;
-  response: Order;
-};
+export type OrderResponse =
+  | {
+      success: true;
+      order: Order;
+    }
+  | {
+      success: false;
+      error: string;
+    };

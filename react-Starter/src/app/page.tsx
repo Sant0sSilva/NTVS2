@@ -2,19 +2,46 @@
 
 import Link from "next/link";
 import { useOrderStore } from "@/store/orderStore";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useValidateEmail } from "../hooks/useEmaiValidation";
+import { api } from "@/api/api";
+import { isNodeError } from "@/utilities/errorUtilities";
+import type { Order } from "@/types/ordersAPITypes";
+import { getCleanOrder } from "@/utilities/cleanOrder";
 
 const Home = () => {
   const [email, setEmail] = useState<string>("");
-  const getOrder = useOrderStore((state) => state.getOrder);
-  const order = useOrderStore((state) => state.order);
+  const router = useRouter();
+  const { isInValid, validate } = useValidateEmail();
+  const setOrder = useOrderStore((state) => state.setOrder);
+
+  const getOrder = async (email: string) => {
+    const encodedEmail = encodeURIComponent(email);
+    const response = await api.getOrderAPI(encodedEmail);
+
+    if (isNodeError(response)) {
+      return;
+    }
+    return response;
+  };
 
   const handleEmailSubmit = async () => {
-    await getOrder(email);
+    const isValid = validate(email);
+
+    if (!isValid) {
+      console.log("invalid email");
+    } else {
+      const fetchedOrder = await getOrder(email);
+      if (fetchedOrder) {
+        setOrder(fetchedOrder);
+        router.push("/drinks");
+      } else {
+        return;
+      }
+    }
   };
-  useEffect(() => {
-    console.log("Here>>", order);
-  }, [order]);
+
   return (
     <div className="flex flex-col md:h-screen md:w-screen items-center">
       {/* BODY CONTAINER */}
@@ -30,7 +57,12 @@ const Home = () => {
         {/* START YOUR ORDER BOX */}
         <div className="box flex flex-col justify-center items-center md:gap-8  md:col-span-3  ">
           <p className="boxHeader">Start your order!</p>
-          <Link href={"/drinks"}>
+          <Link
+            href={"/drinks"}
+            onClick={() => {
+              setOrder(getCleanOrder());
+            }}
+          >
             <button className="btn">Order</button>
           </Link>
         </div>

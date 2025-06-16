@@ -1,6 +1,6 @@
-import { OrderResponse, Order } from "@/types/ordersAPITypes";
+import { Order, OrderResponse } from "@/types/ordersAPITypes";
 
-type RequestMethod = "POST" | "GET" | "DELETE";
+type RequestMethod = "POST" | "GET";
 
 const getResponse = async <T>(
   url: string,
@@ -31,6 +31,23 @@ const getOrderAPI = async (encodedEmail: string) => {
   } catch (error: any) {
     const nodeError: NodeJS.ErrnoException = error;
     return nodeError;
+  }
+};
+
+const postOrderAPI = async (order: Order): Promise<OrderResponse> => {
+  try {
+    const response = await getResponse<OrderResponse>(
+      "/api/create-order",
+      "POST",
+      order
+    );
+
+    return response;
+  } catch (error: any) {
+    return {
+      success: false,
+      error: error.message || "Unexpected error",
+    };
   }
 };
 
@@ -67,4 +84,5 @@ export const api = {
   getMeal,
   getDrinks,
   getOrderAPI,
+  postOrderAPI,
 };

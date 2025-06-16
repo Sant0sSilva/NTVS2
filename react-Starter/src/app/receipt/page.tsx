@@ -1,17 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import ReceiptHeader from "@/components/reciept/ReceiptHeader";
+import ReceiptList from "@/components/reciept/ReceiptList";
 
 const ReceiptPage = () => {
   return (
-    <div className="pageContainer gap-2">
-      {/* <div className="flex flex-col items-center gap-2"> */}
+    <div className="pageContainer gap-2 py-4">
       <div className="box flex flex-col w-2/6">
+        {}
         <h1 className="boxHeader m-5">Receipt</h1>
-        <div className="flex flex-col">
-          <div className="flex gap-20 boxParagraph justify-center">
-            <p>Quantity</p>
-            <p>Item</p>
-            <p>Price</p>
-          </div>
+        <div className="flex flex-col items-center">
+          <ReceiptHeader />
+          <ReceiptList />
         </div>
       </div>
 
