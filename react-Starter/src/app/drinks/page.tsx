@@ -19,7 +19,7 @@ const DrinksPage = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-center w-[10rem] md:h-screen md:w-screen gap-2 justify-center">
+    <div className="flex flex-col md:flex-row justify-center w-[10rem] md:h-screen md:w-screen gap-2">
       {/* Search and drinks menu box */}
       <div className="flex flex-col gap-2">
         <div className="flex gap-2">

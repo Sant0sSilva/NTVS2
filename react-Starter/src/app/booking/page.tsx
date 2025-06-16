@@ -53,10 +53,9 @@ const BookingPage = () => {
     const response = await api.postOrderAPI(updatedOrder);
 
     if (response.success) {
-      console.log("Order submitted successfully:", response.order);
       router.push("/receipt");
     } else {
-      console.error("Order submission failed:", response.error);
+      return;
     }
   };
 
